@@ -1,0 +1,217 @@
+﻿@model E_infoGlobalNew.Models.CustomerUser
+
+@{
+    ViewBag.Title = "Dashbord";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <div class="mb-4 me-3">
+                            <i class="mdi mdi-account-circle text-primary h1"></i>
+                        </div>
+
+                        <div>
+                            <h5>@Model.Name</h5>
+                            <p class="text-muted mb-1">@Model.Email</p>
+                            <p class="text-muted mb-0">@Model.Phone</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body border-top">
+                    <div class="row">
+                        @if (Model.Type == "0")
+                        {
+                            <div class="col-sm-6">
+                                <div>
+                                    <p class="fw-medium mb-2">All Advertise :</p>
+                                    <h4 class="text-success">@ViewBag.AllAds</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <p class="fw-medium mb-2">All Clicks :</p>
+                                    <h4 class="text-success">@ViewBag.All</h4>
+                                </div>
+                            </div>
+                            @*<div class="col-sm-4">
+                                <div>
+                                    <p class="fw-medium mb-2">Floor Amount :</p>
+                                    <h4 class="text-success">Rs : @ViewBag.Floor.00</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="mt-4 mt-sm-0">
+                                    <p class="fw-medium mb-2">Spend Amount :</p>
+                                    <h4 class="text-success">@ViewBag.AllCalculation</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <p class="fw-medium mb-2">Budget Amount :</p>
+                                    <h4 class="text-success">Rs : @ViewBag.Amount.00</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <p class="fw-medium mb-2">Remaning Amount :</p>
+                                    <h4 class="text-success">Rs: @ViewBag.RemaningAmount.00</h4>
+                                </div>
+                            </div>*@
+                        }
+                        else
+                        {
+                            <div class="col-sm-4">
+                                <div>
+                                    <p class="fw-medium mb-2">All Clicks :</p>
+                                    <h4 class="text-success">@ViewBag.Record</h4>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top">
+                    <div class="text-center">
+                        @if (Model.Type == "0")
+                        {
+                            <a href="~/Customer/CustomerAllRecord?ID=@Model.ID" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "Amazon Prime Video")
+                        {
+                            <a href="~/Customer/Tuner?ID=49" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "Apple Tv Movies")
+                        {
+                            <a href="~/Customer/Tuner?ID=50" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "Hulu Movies")
+                        {
+                            <a href="~/Customer/Tuner?ID=51" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "HBO Max")
+                        {
+                            <a href="~/Customer/Tuner?ID=48" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "Netflix Movies")
+                        {
+                            <a href="~/Customer/Tuner?ID=52" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                        @if (Model.Type == "Disney Movies")
+                        {
+                            <a href="~/Customer/Tuner?ID=58" class="btn btn-primary me-2 w-md">View Logs</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end row -->
+    <div class="row">
+        @foreach (var item in Model.HeaderBits.Where(x => x.CustomerID == Model.ID).ToList())
+        {
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>@item.Name</h5>
+                                <p>@item.CateName</p>
+                                <p>Header</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="header" style="background-image: @item.Image; width: 200px; height: 200px; background-repeat: no-repeat; background-size: cover;"></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <p class="fw-medium mb-2">All Clicks :</p>
+                                    <h4 class="text-success">@Model.HeaderBitsLogs.Where(x => x.HeaderID == item.ID).Count()</h4>
+                                </div>
+                            </div>
+                            @*<div class="col-sm-6">
+                                <div>
+                                    <p class="fw-medium mb-2">Spend Amount :</p>
+                                    <h4 class="text-success">@Model.HeaderBitsLogs.Where(x => x.HeaderID == item.ID).Count()</h4>
+                                </div>
+                            </div>*@
+                        </div>
+                        <div class="card-footer bg-transparent border-top">
+                            <div class="text-center">
+                                <a href="~/Customer/OtherLogs?thepassofvalueseinfomovies=@item.ID" class="btn btn-primary me-2 w-md">View Logs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var item in Model.Advertisements.Where(x => x.CustomerID == Model.ID).ToList())
+        {
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                @if (item.PageSubType != null)
+                                {
+                                    <p>@item.PageSubType</p>
+                                }
+                                @if (item.SiderBarCategory != null)
+                                {
+                                    <p>@item.SiderBarCategory</p>
+                                }
+                                @if (item.SeqOrder != "0")
+                                {
+                                    <p>Seq Order @item.SeqOrder</p>
+                                }
+                                <p>@item.Placement</p>
+                                <p>@item.PageTypeName</p>
+                                <p>@item.ContentName</p>
+                            </div>
+                            <div class="col-6">
+                                <img src="~/AdvertiseImage/@item.Image" width="100" height="100" />
+                            </div>
+                            <div class="col-sm-12">
+                                <div>
+                                    <p class="fw-medium mb-2">All Clicks :</p>
+                                    @*@if (item.PageSubType != null)
+                                    {
+                                        if (item.SiderBarCategory != null)
+                                        {
+                                            if (item.SiderBarCategory != "0")
+                                            {
+                                                <h4 class="text-success">@Model.AdvertismentLogs.Where(m => m.CustomerID == Model.ID).Where(x => x.PageTypeName.Contains(item.PageTypeName) && x.PageSubType.Contains(item.PageSubType) && x.SeqOrder.Contains(item.SeqOrder) && x.SiderBarCategory.Contains(item.SiderBarCategory) && x.Placement.Contains(item.Placement)).Count()</h4>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <h4 class="text-success">@Model.AdvertismentLogs.Where(m => m.CustomerID == Model.ID).Where(x => x.PageTypeName.Contains(item.PageTypeName) && x.PageSubType == item.PageSubType && x.Placement.Contains(item.Placement)).Count()</h4>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <h4 class="text-success">@Model.AdvertismentLogs.Where(m => m.CustomerID == Model.ID).Where(x => x.PageTypeName.Contains(item.PageTypeName) && x.Placement.Contains(item.Placement)).Count()</h4>
+                                    }*@
+                                    <h4 class="text-success">@Model.AdvertismentLogs.Where(m => m.CustomerID == Model.ID && m.AdvertiseID == item.ID).Count()</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top">
+                            <div class="text-center">
+                                <a href="~/Customer/AdvertisementList?thepassofvalueseinfomovies=@item.ID" class="btn btn-primary me-2 w-md">View Logs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- end row -->
+</div> <!-- container-fluid -->
+
+

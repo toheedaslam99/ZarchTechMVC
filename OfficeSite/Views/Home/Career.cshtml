@@ -1,0 +1,38 @@
+﻿@model E_infoGlobalNew.Models.Job
+@{
+    ViewBag.Title = "Career";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div></div>
+<!-- job opening area start -->
+<div class="job-opening-area rts-section-gapBottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-center-style-two">
+                    <h2 class="title">Current Openings</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 mt--30">
+            @if (ViewBag.Jobs != null)
+            {
+                foreach (var Records in ViewBag.Jobs)
+                {
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".1s">
+                        <div class="single-job-opening-card">
+                            <h6>@Records.JobType</h6>
+                            <div class="bottom-area">
+                                @*<div class="selary-range">
+                                        <p>$1000 - $12000 <span>USD/month</span></p>
+                                    </div>*@
+                                <a href="@Url.Action("Job","Home",new {Id = @Records.Id})" class="rts-btn btn-primary btn-bold">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- job opening area end -->

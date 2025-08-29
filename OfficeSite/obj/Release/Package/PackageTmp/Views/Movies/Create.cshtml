@@ -1,0 +1,438 @@
+﻿@model  E_infoGlobalNew.Models.Movie
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Colmn {
+        margin-top: 10px;
+    }
+
+    .upclonm {
+        margin-top: -25px;
+        text-decoration: none;
+    }
+
+    #UpdateBy {
+        display: none;
+    }
+    .Description {
+        height: 200px;
+    }
+</style>
+@using (Html.BeginForm("Create", "Movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-12">
+                <label>Title</label>
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12">
+                <label>Description</label>
+                <textarea name="Discription" id="Discription" class="form-control"></textarea>
+            </div>
+            <div class="col-4">
+                <label>Upload Image</label>
+                <input type="file" class="form-control" name="UoloadImage" id="UoloadImage" accept=".jpg, .png," />
+            </div>
+            <div class="col-4">
+                <label>Upload Movie</label>
+                <input type="file" class="form-control" name="UploadMovie" id="UploadMovie" accept="video/*" />
+            </div>
+            <div class="col-4" style="display: none;">
+                <label>Menu</label>
+                @Html.DropDownList("MenuID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MenuID, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-4">
+                <label>Author</label>
+                @Html.DropDownList("CreateBy", null, htmlAttributes: new { @class = "form-control select2" })
+                @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-4" id="UpdateBy">
+                <label>Movie Poster</label>
+                @Html.DropDownList("UpdateBy", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UpdateBy, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-pills nav-justified" role="tablist">
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#home-1" role="tab">
+                                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                    <span class="d-none d-sm-block">SEO</span>
+                                </a>
+                            </li>
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#profile-1" role="tab">
+                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                    <span class="d-none d-sm-block">Readability</span>
+                                </a>
+                            </li>
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#messages-1" role="tab">
+                                    <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                                    <span class="d-none d-sm-block">Schema</span>
+                                </a>
+                            </li>
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#settings-1" role="tab">
+                                    <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                    <span class="d-none d-sm-block">Social</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content p-3 text-muted">
+                            <div class="tab-pane" id="home-1" role="tabpanel">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label>Focus Key Phrase</label>
+                                            @Html.EditorFor(model => model.Focuskeyphrase, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Focuskeyphrase, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Seo Title</label>
+                                            @Html.EditorFor(model => model.SEOTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SEOTitle, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Slug</label>
+                                            @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-12">
+                                            <label>Meta Description</label>
+                                            <textarea name="MetaDiscription" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="profile-1" role="tabpanel">
+                                <p class="mb-0">
+                                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                                    single-origin coffee squid. Exercitation +1 labore velit, blog
+                                    sartorial PBR leggings next level wes anderson artisan four loko
+                                    farm-to-table craft beer twee. Qui photo booth letterpress,
+                                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                                    aesthetic magna 8-bit.
+                                </p>
+                            </div>
+                            <div class="tab-pane" id="messages-1" role="tabpanel">
+                                <h5>Yoast SEO automatically describes your pages using schema.org<a href="https://yoast.com/structured-data-schema-ultimate-guide/#utm_source=yoast-seo&utm_medium=software&utm_term=info-schema-metabox&utm_content=schema-settings&php_version=7.4&platform=wordpress&platform_version=6.2&software=free&software_version=20.4&days_active=91-180&shortlink=400"><i class="fa fa-question-circle"></i></a></h5>
+                                <p>This helps search engines understand your website and your content. You can change some of your settings for this page below.</p>
+                                <h5>What type of page or content is this?<a href="https://yoast.com/help/selecting-content-types-in-schema-settings/#utm_source=yoast-seo&utm_medium=software&utm_term=help-schema-metabox&utm_content=schema-settings&php_version=7.4&platform=wordpress&platform_version=6.2&software=free&software_version=20.4&days_active=91-180&shortlink=402"><i class="fa fa-question-circle"></i></a></h5>
+                                <br />
+                                <label class="fw-bold">Page Type</label>
+                                <select class="form-control select2">
+                                    <option>Select</option>
+                                    <option>Default for vedio (Web Page)</option>
+                                    <option>Web Page</option>
+                                    <option>Item Page</option>
+                                    <option>About Page</option>
+                                    <option>FAQ Page</option>
+                                    <option>QA Page</option>
+                                    <option>Profile Page</option>
+                                    <option>Contact Page</option>
+                                    <option>Medical Web Page</option>
+                                    <option>Collection Page</option>
+                                    <option>Check Out Page</option>
+                                    <option>Real Estate Listing</option>
+                                    <option>Search Results Page</option>
+                                </select>
+                                <br />
+                                <label class="fw-bold">Article Type</label>
+                                <select  class="form-control select2">
+                                    <option>Select</option>
+                                    <option>Default for vedio (None)</option>
+                                    <option>Article</option>
+                                    <option>Blog Post</option>
+                                    <option>Social Media Posting</option>
+                                    <option>News Article</option>
+                                    <option>Advertiser Content Article</option>
+                                    <option>Satrical Article</option>
+                                    <option>Scholarly Article</option>
+                                    <option>Tech Article</option>
+                                    <option>Report</option>
+                                    <option>None</option>
+                                </select>
+                                <br />
+                                <p>You can change the default type for Videos under Content types in the Settings.</p>
+                            </div>
+                            <div class="tab-pane" id="settings-1" role="tabpanel">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" id="FbTitle" />
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Upload Image</label>
+                                            <input type="file" class="form-control" />
+                                        </div>
+                                        <div class="col-12">
+                                            <label>Description</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 text-center">
+                                        <h5 class="font-size-14 mb-3">Share with Socail Compaign</h5>
+
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary" onclick="share_fb()">
+                                                    <i class="mdi mdi-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
+                                                    <i class="mdi mdi-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                                                    <i class="mdi mdi-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                                                    <i class="mdi mdi-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                                                    <i class="mdi mdi-quora"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trigger the modal with a button -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div>
+                        <div class="modal fade bs-example-modal-center" data-backdrop="static" id="experienceModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Category</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <select class="form-control" id="Cate">
+                                            @if (ViewBag.Category != null)
+                                            {
+                                                <option>--Select--</option>
+                                                foreach (var item in ViewBag.Category)
+                                                {
+                                                    <option value="@item.CategoryID">@item.CategoryName</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        @*<button type="button" id="" class="btn btn-primary">Add</button>*@
+                                        <button type="button" id="btnExperience" onclick="SaveExperience()" class="btn detail_apply_btn mb-0">Add</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+                <div class="card">
+                    <div>
+                        <!-- Static Backdrop Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Tags</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" id="CompanyName">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        @*<button type="button" id="" class="btn btn-primary">Add</button>*@
+                                        <button type="button" id="btnTag" onclick="SaveTag()" class="btn detail_apply_btn mb-0">Add</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card body -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="add_box_bg">
+                        <div class="center_title">
+                            <h4>
+                                Category
+                                @*<a href="#" type="button" data-toggle="modal" data-target="#experienceModal" class="detail_apply_btn float-right"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>*@
+                                <button type="button" onclick="ClearExperienceForm();" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+                            </h4>
+                        </div>
+                        <div class="table-responsive apply_tables">
+                            <table class="table experienceTable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="add_box_bg">
+                        <div class="center_title">
+                            <h4>
+                                Category
+                                @*<a href="#" type="button" data-toggle="modal" data-target="#experienceModal" class="detail_apply_btn float-right"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>*@
+                                <button type="button" onclick="ClearTagForm();" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+                            </h4>
+                        </div>
+                        <div class="table-responsive apply_tables">
+                            <table class="table TagTable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Tags</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trigger the modal with a button -->
+            <div class="form-group Colmn">
+                <div class="float-end">
+                    <input type="submit" value="Save" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="upclonm btn btn-dark">
+    @Html.ActionLink("Back", "Index")
+</div>
+<script type="text/javascript">
+        var counter = 1;
+        function SaveExperience() {
+            var tableRow = $('.experienceTable tbody tr').length;
+            let Cate = $('#Cate option:selected').text();
+            let CateId = $('#Cate');
+                $('.experienceTable tbody').append(`<tr id='tablerow_${counter}'>
+                <td>
+                    ${Cate}
+                    <input hidden value="${CateId.val()}" name="MovieCategories[${tableRow}].CategoryID"/>
+                </td>
+                <td class="action_table">
+                <button type="button" class="btn btn-primary btn-sm" onclick="GetExperience(${counter},${tableRow});"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="RemoveExperienceRow(${counter});"><i class="fa fa-trash"></i></button></td>
+                </tr>`);
+                counter++;
+                $('#experienceModal').modal('hide');
+                $('.modal-backdrop').removeClass();
+                ClearExperienceForm();
+        }
+        function ClearExperienceForm() {
+            $('#Cate').val('');
+        }
+        function GetExperience(index, tableRow) {
+            //$('#experienceForm').parsley().reset();
+            var row = $('#tablerow_' + index);
+            $("#Cate").val(row.find("td:eq(0)").val().trim());
+            $('#experienceModal').modal('show');
+            $('#btnExperience').attr('onClick', "UpdateExperience('" + index + "','" + tableRow + "')");
+        }
+        function UpdateExperience(index, tableRow) {
+                var row = $('#tablerow_' + index);
+                let Company = $("#Cate").val();
+                row.find("td:eq(0)").text(Company);
+                row.find("td:eq(0)").append(`<input hidden value="${Company}" name="MovieCategory[${tableRow}].CategoryID"/>`)
+                $('#btnExperience').attr('onClick', "SaveExperience()");
+                $('#experienceModal').modal('hide');
+        }
+        function RemoveExperienceRow(index) {
+            if (counter > 1) {
+                $('#tablerow_' + index).remove();
+                counter--;
+            }
+            return false;
+        }
+        function ClearEditSaveExperience() {
+            $('#btnExperience').attr('onClick', "SaveExperience()");
+        }
+ </script>
+<script type="text/javascript">
+    var counter = 1;
+    function SaveTag() {
+        var tableRow = $('.TagTable tbody tr').length;
+        let company = $('#CompanyName').val();
+        $('.TagTable tbody').append(`<tr id='tablerow_${counter}'>
+                <td>
+                    ${company}
+                    <input hidden value="${company}" name="MovieTags[${tableRow}].TagName"/>
+                </td>
+                <td class="action_table">
+                <button type="button" class="btn btn-primary btn-sm" onclick="GetTags(${counter},${tableRow});"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="RemoveTagsRow(${counter});"><i class="fa fa-trash"></i></button></td>
+                </tr>`);
+        counter++;
+        $('#staticBackdrop').modal('hide');
+        $('.modal-backdrop').removeClass();
+        ClearTagForm();
+    }
+    function ClearTagForm() {
+        $('#CompanyName').val('');
+    }
+    function GetTags(index, tableRow) {
+        //$('#experienceForm').parsley().reset();
+        var row = $('#tablerow_' + index);
+        $("#CompanyName").val(row.find("td:eq(0)").text().trim());
+        $('#staticBackdrop').modal('show');
+        $('#btnTag').attr('onClick', "UpdateTags('" + index + "','" + tableRow + "')");
+    }
+    function UpdateTags(index, tableRow) {
+        var row = $('#tablerow_' + index);
+        let Company = $("#CompanyName").val();
+        row.find("td:eq(0)").text(Company);
+        row.find("td:eq(0)").append(`<input hidden value="${Company}" name="MovieTags[${tableRow}].TagName"/>`)
+        $('#btnTag').attr('onClick', "SaveTag()");
+        $('#staticBackdrop').modal('hide');
+    }
+    function RemoveTagsRow(index) {
+        if (counter > 1) {
+            $('#tablerow_' + index).remove();
+            counter--;
+        }
+        return false;
+    }
+    function ClearEditSaveTags() {
+        $('#btnTag').attr('onClick', "SaveTag()");
+    }
+</script>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.AdvertismentLog>
+
+@{
+    ViewBag.Title = "Logs";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+    <thead>
+        <tr>
+            @*<th>
+                <label class="fw-bold">IP</label>
+            </th>*@
+            <th>
+                <label class="fw-bold">Country</label>
+            </th>
+            <th>
+                <label class="fw-bold">Date</label>
+            </th>
+            <th>
+                <label class="fw-bold">Time</label>
+            </th>
+            <th>
+                <label class="fw-bold">Status</label>
+            </th>
+            <th>
+                <label class="fw-bold">Content Name</label>
+            </th>
+            <th>
+                <label class="fw-bold">Target Url</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IPAdress)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TragetUrl)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

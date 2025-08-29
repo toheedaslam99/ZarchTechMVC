@@ -1,0 +1,72 @@
+﻿@model E_infoGlobalNew.Models.Redirection
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Colmn {
+        margin-top: 10px;
+    }
+
+    .upclonm {
+        margin-top: -25px;
+        text-decoration: none;
+    }
+</style>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="container-fluid">
+        <div class="row">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-12">
+                <label>Source URL</label>
+                @Html.EditorFor(model => model.SourceURL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SourceURL, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Query Parameters</label>
+                <select class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="1">Exact match in any order</option>
+                    <option value="2">Ignor all parameters</option>
+                    <option value="3">Ignor & pass parameter to the target</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label>Group</label>
+                <select class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="1">Redirection</option>
+                    <option value="2">Modified Posts</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label>Target URL</label>
+                @Html.EditorFor(model => model.TargetURL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetURL, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Movie Name</label>
+                @Html.DropDownList("MovieID", null, htmlAttributes: new { @class = "form-control select2" })
+                @Html.ValidationMessageFor(model => model.MovieID, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Tuner Name</label>
+                @Html.DropDownList("TunerID", null, htmlAttributes: new { @class = "form-control select2" })
+                @Html.ValidationMessageFor(model => model.TunerID, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group Colmn">
+                <div class="float-end">
+                    <input type="submit" value="Save" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="upclonm btn btn-dark">
+    @Html.ActionLink("Back", "Index")
+</div>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.Category>
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+@*<script>
+    $(document).ready(function () {
+        GetData();
+        function GetData() {
+            var html = '';
+            $.ajax({
+                type: 'GET',
+                url: '/design/getgenres',
+                success: function (response) {
+                    var data = JSON.parse(JSON.stringify(response));
+                    $.each(data, function (index, Result) {
+                        debugger;
+                        html += "<li class='col-xl-3 col-lg-3 col-md-3 col-sm-6 text-center'>" +
+                                    "<a href''>" +
+                                        "<div class='iq-tag-box watchlist-first'>" +
+                                            "<span class='iq-tag'>" + Result.name + "</span>" +
+                                        "</div>" +
+                                    " </a>" +
+                                "</li>";
+                    });
+                    $("#ListData").append(html);
+                }
+            });
+        }
+    });
+</script>*@
+<main id="main" class="genres-main">
+    <section class="iq-genres-section">
+        <div class="container-fluid">
+            <div class="iq-main-header d-flex align-items-center justify-content-between mt-5 mt-lg-0">
+                <h4 class="main-title">Movie Categories</h4>
+            </div>
+            <ul id="ListData" class=" row mb-0 list-inline">
+                @foreach (var item in Model)
+                {
+                    <li class="col-xl-3 col-lg-3 col-md-3 col-sm-6 text-center">
+                        <a href="@Url.Action("CategoryMovies","Design",new {CateId = item.CategoryName, find = item.CategoryID })">
+                            <div class="iq-tag-box watchlist-first">
+                                <span class="iq-tag ">@item.CategoryName</span>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </section>
+</main>
+
+

@@ -1,0 +1,142 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.Country>
+
+@{
+    ViewBag.Title = "CountryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .colmn {
+        margin-top: 10px;
+    }
+
+    .fa-trash-alt {
+        color: red;
+    }
+
+    .fa-pencil-alt {
+        color: green;
+    }
+</style>
+@*Create Record Start*@
+<button type="button" class="btn btn-primary waves-effect waves-light float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New</button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm("CreateCountry", "Location", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Create Record</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="fw-bold">Country Name</label>
+                            <input type="text" name="CountryName" id="CountryName" class="form-control" />
+                        </div>
+                        @*<div class="col-6">
+                                <label class="fw-bold">Created By</label>
+                                <select class="form-control">
+                                    @if (ViewBag.CreateBy != null)
+                                    {
+                                        <option>--Select--</option>
+                                        foreach (var item in ViewBag.CreateBy)
+                                        {
+                                            <option value="@item.UserID">@item.UserName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>*@
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@*Create Record End*@
+<table class="table table-bordered dt-responsive  nowrap w-100">
+    <tr>
+        <th>
+            <label class="fw-bold">ID</label>
+        </th>
+        <th>
+            <label class="fw-bold">Name</label>
+        </th>
+        <th style="display: none;">
+            <label class="fw-bold">Create By</label>
+        </th>
+        <th style="display: none;">
+            @Html.DisplayNameFor(model => model.UserTable1.UserName)
+        </th>
+        <th>
+            <label class="fw-bold">Action</label>
+        </th>
+    </tr>
+    @{int RowNo = 0;}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{RowNo++;} @RowNo
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td style="display: none;">
+                @Html.DisplayFor(modelItem => item.UserTable.UserName)
+            </td>
+            <td style="display: none;">
+                @Html.DisplayFor(modelItem => item.UserTable1.UserName)
+            </td>
+            <td class="actions-hover actions-fade fas fa- border border-success">
+                @Html.ActionLink(" ", "Edit", new { id = item.CountryID }, new { @class = "fas fa-pencil-alt" })
+            </td>
+            @if (ViewBag.Session == "ma.kadir")
+            {
+                <td class="actions-hover actions-fade fas fa- border border-danger">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ActionLink(" ", "Delete", new { id = item.CountryID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "fas fa-trash-alt" })
+                    }
+                </td>
+            }
+            @if (ViewBag.Session == "shahnehal")
+            {
+                <td class="actions-hover actions-fade fas fa- border border-danger">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ActionLink(" ", "Delete", new { id = item.CountryID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "fas fa-trash-alt" })
+                    }
+                </td>
+            }
+        </tr>
+    }
+</table>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Delete"] != null)
+{
+    <script>
+        swal("Delete!", "@TempData["Delete"]", "success");
+    </script>
+}
+@if (TempData["Edit"] != null)
+{
+    <script>
+        swal("Edit!", "@TempData["Edit"]", "success");
+    </script>
+}
+@if (TempData["Save"] != null)
+{
+    <script>
+        swal("Save!", "@TempData["Save"]", "success");
+    </script>
+}

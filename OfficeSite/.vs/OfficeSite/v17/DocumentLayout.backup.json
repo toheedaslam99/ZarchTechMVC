@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\OfficeSite\\OfficeSite\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|d:\\officesite\\officesite\\views\\home\\bankingservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|solutionrelative:views\\home\\bankingservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|d:\\officesite\\officesite\\content\\assets\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|solutionrelative:content\\assets\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|d:\\officesite\\officesite\\views\\home\\suppliersmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|solutionrelative:views\\home\\suppliersmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|D:\\OfficeSite\\OfficeSite\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|d:\\officesite\\officesite\\views\\home\\commissionsandincentivesmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|OfficeSite.csproj|solutionrelative:views\\home\\commissionsandincentivesmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BankingServices.cshtml",
+              "DocumentMoniker": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\BankingServices.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\BankingServices.cshtml",
+              "ToolTip": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\BankingServices.cshtml",
+              "RelativeToolTip": "Views\\Home\\BankingServices.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T21:38:36.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SuppliersManagement.cshtml",
+              "DocumentMoniker": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\SuppliersManagement.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\SuppliersManagement.cshtml",
+              "ToolTip": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\SuppliersManagement.cshtml",
+              "RelativeToolTip": "Views\\Home\\SuppliersManagement.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAGUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T21:37:14.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CommissionsAndIncentivesManagement.cshtml",
+              "DocumentMoniker": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\CommissionsAndIncentivesManagement.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\CommissionsAndIncentivesManagement.cshtml",
+              "ToolTip": "D:\\OfficeSite\\OfficeSite\\Views\\Home\\CommissionsAndIncentivesManagement.cshtml",
+              "RelativeToolTip": "Views\\Home\\CommissionsAndIncentivesManagement.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAAGUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T21:35:46.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\OfficeSite\\OfficeSite\\Content\\assets\\css\\style.css",
+              "RelativeDocumentMoniker": "Content\\assets\\css\\style.css",
+              "ToolTip": "D:\\OfficeSite\\OfficeSite\\Content\\assets\\css\\style.css",
+              "RelativeToolTip": "Content\\assets\\css\\style.css",
+              "ViewState": "AgIAAAI1AAAAAAAAAAAYwBo1AAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-28T19:38:56.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\OfficeSite\\OfficeSite\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\OfficeSite\\OfficeSite\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAgwGEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T18:39:49.191Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

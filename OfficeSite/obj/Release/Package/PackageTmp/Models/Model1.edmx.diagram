@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="42820fba604d4d93bb862bb546a81fa4" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="Model1.Advertisement" Width="1.5" PointX="14.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.AdvertismentLog" Width="1.5" PointX="13.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Blog" Width="1.5" PointX="4" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.BlogCategory" Width="1.5" PointX="3" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.BlogCategoryList" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.BlogMenu" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.BlogTag" Width="1.5" PointX="11.125" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.BlogTagList" Width="1.5" PointX="5.625" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Category" Width="1.5" PointX="4.125" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Country" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Menu" Width="1.5" PointX="4.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Movie" Width="1.5" PointX="0.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MovieCast" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MovieCategory" Width="1.5" PointX="7.875" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MovieInfo" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MoviePoster" Width="1.5" PointX="2.375" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MovieTag" Width="1.5" PointX="9.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MovieTuner" Width="1.5" PointX="13.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Redirection" Width="1.5" PointX="11.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.RedirectionLog" Width="1.5" PointX="9.625" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.State" Width="1.5" PointX="7.625" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Status" Width="1.5" PointX="1.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Tag" Width="1.5" PointX="11.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Tuner" Width="1.5" PointX="5.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.UserTable" Width="1.5" PointX="2.125" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.CustomerUser" Width="1.5" PointX="13" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.HeaderBit" Width="1.5" PointX="14.875" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.HeaderBitsLog" Width="1.5" PointX="11.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.City" Width="1.5" PointX="9.375" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Model1.FK_Advertisement_CustomerUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_AdvertismentLogs_CustomerUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Blog_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Blog_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Blog_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_BlogCategoryList_Blog" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_BlogTagList_Blog" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_BlogCategoryList_BlogCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieCategory_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Country_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Country_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MoviePoster_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_State_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Menu_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Menu_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Menu_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Movie_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Movie_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Movie_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieCast_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieCategory_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieInfo_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieTag_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Redirection_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_RedirectionLogs_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieCast_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieCast_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieInfo_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieInfo_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MoviePoster_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MoviePoster_UserTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieTuner_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_MovieTuner_Tuner" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_Redirection_Tuner" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_RedirectionLogs_Redirection" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_RedirectionLogs_Tuner" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_City_State" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_UserTable_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_HeaderBit_CustomerUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_HeaderBitsLogs_CustomerUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FK_HeaderBitsLogs_HeaderBit" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model1.CustomerLog" Width="1.5" PointX="9.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.SignUp" Width="1.5" PointX="7.75" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

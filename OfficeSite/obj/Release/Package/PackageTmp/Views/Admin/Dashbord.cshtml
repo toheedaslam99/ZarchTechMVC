@@ -1,0 +1,383 @@
+﻿
+@{
+    ViewBag.Title = "Dashbord";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium ">Total Users</p>
+                        <h4 class="mb-0">@ViewBag.user</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","UserConfiguration")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Total Movies</p>
+                        <h4 class="mb-0">@ViewBag.movies</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","Movies")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Total Movie Categories</p>
+                        <h4 class="mb-0">@ViewBag.moviecategroy</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","Categories")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Total Blogs</p>
+                        <h4 class="mb-0">@ViewBag.blogs</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","Blogs")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Total Blog Categories</p>
+                        <h4 class="mb-0">@ViewBag.blogscategroy</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","BlogCategories")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-lg-3">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Total Redirection</p>
+                        <h4 class="mb-0">@ViewBag.redirect</h4>
+                    </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div data-colors='["--bs-success", "--bs-transparent"]' dir="ltr" id="eathereum_sparkline_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body border-top py-3">
+                <a href="@Url.Action("Index","Redirections")">
+                    <p class="mb-0"> <span class="badge badge-soft-success me-1"><i class="bx bx-trending-up align-bottom me-1"></i> View All Record</span></p>
+                </a>
+            </div>
+        </div>
+    </div><!--end col-->
+</div><!--end row-->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Recent Added Movies</h2>
+                <div data-simplebar style="max-height: 376px;">
+                    <div class="vstack gap-4">
+                        @foreach (var movie in ViewBag.movielist)
+                        {
+                            <div class="d-flex">
+                                <img src="~/Image/@movie.MovieImage" alt="" height="40" class="rounded">
+                                <div class="ms-2 flex-grow-1">
+                                    <h6 class="mb-1 font-size-15"><a class="text-body">@movie.Title</a></h6>
+                                    <p class="text-muted mb-0">@movie.UserTable.UserName</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Recent Added Blogs</h2>
+                <div data-simplebar style="max-height: 376px;">
+                    <div class="vstack gap-4">
+                        @foreach (var blog in ViewBag.bloglist)
+                        {
+                            <div class="d-flex">
+                                <img src="~/Image/@blog.BlogPoster" alt="" height="40" class="rounded">
+                                <div class="ms-2 flex-grow-1">
+                                    <h6 class="mb-1 font-size-15"><a class="text-body">@blog.BlogTitle</a></h6>
+                                    <p class="text-muted mb-0">@blog.UserTable.UserName</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+</div><!--end row-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="d-flex">
+            <h4 class="card-title mb-4 flex-grow-1">Total Advertisment</h4>
+        </div>
+    </div><!--end col-->
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <div class="text-center">
+                        <img src="~/Content/logo/Google.png" alt="" class="avatar-lg">
+                    </div>
+                    <h1 class="mt-4 mb-2 text-dark text-center">Google Advertisment</h1>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Landing</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.goolelanding</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Movie Category</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.gooleCateory</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Vedio Banner</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.goolevedio</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Title</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.gooletitle</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Category</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.gooleblogcategory</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Description</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.gooledescription</b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <div class="text-center">
+                        <img src="~/Content/Favicon.png" alt="" class="avatar-lg">
+                    </div>
+                    <h1 class="mt-4 mb-2 text-dark text-center">E-info Advertisment</h1>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Landing</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallylanding</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Movie Category</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallyCateory</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Vedio Banner</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallyvedio</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Title</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallytitle</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Category</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallyblogcategory</b></h5>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="text-dark"><b>Blog Description</b></h6>
+                            <h5 class="text-success"><b>@ViewBag.manuallydescription</b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+</div><!--end row-->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Recent Added Other HeaderBits</h2>
+                <div data-simplebar style="max-height: 376px;">
+                    <div class="vstack gap-4">
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Recent Added Category HeaderBits</h2>
+                <div data-simplebar style="max-height: 376px;">
+                    <div class="vstack gap-4">
+                        @foreach (var header in ViewBag.header)
+                        {
+                            <div class="d-flex">
+                                <img src="~/HeaderBit/@header.Image" alt="" height="40" class="rounded">
+                                <div class="ms-2 flex-grow-1">
+                                    <h6 class="mb-1 font-size-15"><a class="text-body">@header.Name</a></h6>
+                                    <p class="text-muted mb-0">@header.CreateBy <b>@header.CreateDate</b> <b class="badge badge-soft-success me-1">@header.Status</b></p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div><!--end card-->
+    </div><!--end col-->
+</div><!--end row-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="d-flex">
+            <h4 class="card-title mb-4 flex-grow-1">Stream Tuners</h4>
+            <div>
+                <a href="@Url.Action("Index","Redirections")" class="btn btn-primary btn-sm">View All <i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+        </div>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=49">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/prime video.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">Prime Vedio</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.prime</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=48">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/hbo.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">HBO Max</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.hbo</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=52">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/Netflix.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">Netflix Movies</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.netflix</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=51">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/hulu-icon-300x300.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">Hulu Tv</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.hulu</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=58">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/Disney.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">Disney Movies</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.disney</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+    <div class="col-4">
+        <a href="~/Admin/Tuner?ID=50">
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3">
+                        <img src="~/Content/logo/apple-tv.png" alt="" class="avatar-lg">
+                        <h1 class="mt-4 mb-2 text-dark text-center">Apple Tv</h1>
+                        <h3 class="text-center text-success"><b>@ViewBag.apple</b></h3>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </a>
+    </div><!--end col-->
+</div><!--end row-->

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="col-md-12 mb-3">
+    <div class="card text-left">
+        <div class="dataTablePageHeader card-header">
+            <a href="user/add" class="btn btn-primary pull-right">Add <i class="fa fa-plus"></i></a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Records != null)
+                        {
+                            foreach (var Records in ViewBag.Records)
+                            {
+                                <tr>
+                                    <td>@Records.Id</td>
+                                    <td>@Records.Name</td>
+                                    <td>@Records.UserName</td>
+                                    <td>@Records.Email</td>
+                                    <td>@Records.Status</td>
+                                    <td>
+                                        @Html.ActionLink(" ","Edit", new { Id = Records.Id }, new { @class = "btn btn-success btn-sm nav-icon i-Pen-2 font-weight-bold" })
+                                        @*<a href="/edit?Id=@Records.Id" class="btn btn-success btn-sm">
+                                            <i class="nav-icon i-Pen-2 font-weight-bold"></i>
+                                        </a>*@
+                                        @*<a href="#" class="text-danger mr-2">
+            <i class="nav-icon i-Close-Window font-weight-bold"></i>
+        </a>*@
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Edit"] != null)
+{
+    <script>
+        debugger
+        swal("Thank You", "@TempData["Edit"]", "success");
+    </script>
+}

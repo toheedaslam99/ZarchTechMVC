@@ -1,0 +1,120 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.Menu>
+
+@{
+    ViewBag.Title = "Menu List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .colmn {
+        margin-top: 10px;
+    }
+
+    .fa-trash-alt {
+        color: red;
+    }
+
+    .fa-pencil-alt {
+        color: green;
+    }
+</style>
+<p class="btn btn-info float-end colmn">
+    @Html.ActionLink("Add New", "Create")
+<p />
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bold">SN No.</label>
+            </th>
+            <th>
+                <label class="fw-bold">Menu Name</label>
+            </th>
+            <th>
+                <label class="fw-bold">Description</label>
+            </th>
+            <th>
+                <label class="fw-bold">Status</label>
+            </th>
+            <th style="display:none">
+                @Html.DisplayNameFor(model => model.UserTable.UserName)
+            </th>
+            <th style="display:none">
+                @Html.DisplayNameFor(model => model.UserTable1.UserName)
+            </th>
+            <th>
+                <label class="fw-bold">Action</label>
+            </th>
+        </tr>
+    </thead>
+    @{
+        int sno = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @{ sno++; }
+                    @sno
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MenuName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MenuDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.StatusName)
+                </td>
+                <td style="display:none">
+                    @Html.DisplayFor(modelItem => item.UserTable.UserName)
+                </td>
+                <td style="display:none">
+                    @Html.DisplayFor(modelItem => item.UserTable1.UserName)
+                </td>
+                <td class="actions-hover actions-fade fas fa- border border-success">
+                    @Html.ActionLink(" ", "Edit", new { id = item.MenuID }, new { @class = "fas fa-pencil-alt" })
+                </td>
+                @if (ViewBag.Session == "ma.kadir")
+                {
+                    <td class="actions-hover actions-fade fas fa- border border-danger">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ActionLink(" ", "Delete", new { id = item.MenuID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "fas fa-trash-alt" })
+                        }
+                    </td>
+                }
+                @if (ViewBag.Session == "shahnehal")
+                {
+                    <td class="actions-hover actions-fade fas fa- border border-danger">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ActionLink(" ", "Delete", new { id = item.MenuID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "fas fa-trash-alt" })
+                        }
+                    </td>
+                }
+            </tr>
+        </tbody>
+    }
+</table>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Delete"] != null)
+{
+    <script>
+        swal("Delete!", "@TempData["Delete"]", "success");
+    </script>
+}
+@if (TempData["Edit"] != null)
+{
+    <script>
+        swal("Edit!", "@TempData["Edit"]", "success");
+    </script>
+}
+@if (TempData["Save"] != null)
+{
+    <script>
+        swal("Save!", "@TempData["Save"]", "success");
+    </script>
+}

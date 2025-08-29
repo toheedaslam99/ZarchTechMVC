@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="col-md-12 mb-3">
+    <div class="card text-left">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Job</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Qualification</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Resume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Records != null)
+                        {
+                            foreach (var Records in ViewBag.Records)
+                            {
+                                <tr>
+                                    <td>@Records.Id</td>
+                                    <td>@Records.Job.JobType</td>
+                                    <td>@Records.Name</td>
+                                    <td>@Records.Email</td>
+                                    <td>@Records.Number</td>
+                                    <td>@Records.Location</td>
+                                    <td>@Records.Qualification</td>
+                                    <td>@Records.Experience</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" href="~/Content/uploads/@Url.Content(Records.Resume)" download>
+                                            <i class="fa fa-download"></i> Download
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Edit"] != null)
+{
+    <script>
+        debugger
+        swal("Thank You", "@TempData["Edit"]", "success");
+    </script>
+}

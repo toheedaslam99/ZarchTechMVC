@@ -1,0 +1,55 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.RedirectionLog>
+
+@{
+    ViewBag.Title = "Tuner";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bold">Tuner</label>
+            </th>
+            <th>
+                <label class="fw-bold">IP/Address</label>
+            </th>
+            <th>
+                <label class="fw-bold">Code</label>
+            </th>
+            <th>
+                <label class="fw-bold">Date</label>
+            </th>
+            <th>
+                <label class="fw-bold">Hits</label>
+            </th>
+            <th>
+                <label class="fw-bold">URL</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tuner.TunerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccessDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Redirection.TargetURL)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

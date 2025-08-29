@@ -1,0 +1,1160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageType" Type="Int32" Nullable="false" />
+    <Property Name="Placement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageSubType" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="AdsType" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Size" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SeqOrder" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FloorRent" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="BudgetAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TragetUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoogleCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PageTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CustomerUser" Relationship="Self.FK_Advertisement_CustomerUser" FromRole="Advertisement" ToRole="CustomerUser" />
+    <Property Name="SiderBarCategory" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ContentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AdvertismentLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IPAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Desktop" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Month" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Hits" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="PageType" Type="Int32" Nullable="false" />
+    <Property Name="Placement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageSubType" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SeqOrder" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TragetUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AdsType" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CustomerUser" Relationship="Self.FK_AdvertismentLogs_CustomerUser" FromRole="AdvertismentLogs" ToRole="CustomerUser" />
+    <Property Name="SiderBarCategory" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ContentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AdvertiseID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogID" />
+    </Key>
+    <Property Name="BlogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogTitle" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descirption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BlogPoster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="MetaDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Focuskeyphrase" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SEOTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BlogMenu" Relationship="Self.FK_Blog_Menu" FromRole="Blog" ToRole="BlogMenu" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_Blog_UserTable" FromRole="Blog" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_Blog_UserTable1" FromRole="Blog" ToRole="UserTable" />
+    <NavigationProperty Name="BlogCategoryLists" Relationship="Self.FK_BlogCategoryList_Blog" FromRole="Blog" ToRole="BlogCategoryList" />
+    <NavigationProperty Name="BlogTagLists" Relationship="Self.FK_BlogTagList_Blog" FromRole="Blog" ToRole="BlogTagList" />
+  </EntityType>
+  <EntityType Name="BlogCategory">
+    <Key>
+      <PropertyRef Name="BlogCategoryID" />
+    </Key>
+    <Property Name="BlogCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogCategoryName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BlogCategoryLists" Relationship="Self.FK_BlogCategoryList_BlogCategory" FromRole="BlogCategory" ToRole="BlogCategoryList" />
+  </EntityType>
+  <EntityType Name="BlogCategoryList">
+    <Key>
+      <PropertyRef Name="BlogCategoryListID" />
+    </Key>
+    <Property Name="BlogCategoryListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogID" Type="Int32" Nullable="false" />
+    <Property Name="BlogCategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Blog" Relationship="Self.FK_BlogCategoryList_Blog" FromRole="BlogCategoryList" ToRole="Blog" />
+    <NavigationProperty Name="BlogCategory" Relationship="Self.FK_BlogCategoryList_BlogCategory" FromRole="BlogCategoryList" ToRole="BlogCategory" />
+  </EntityType>
+  <EntityType Name="BlogMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogMenuName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Blogs" Relationship="Self.FK_Blog_Menu" FromRole="BlogMenu" ToRole="Blog" />
+  </EntityType>
+  <EntityType Name="BlogTag">
+    <Key>
+      <PropertyRef Name="BlogTagID" />
+    </Key>
+    <Property Name="BlogTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogTagName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogTagList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogID" Type="Int32" Nullable="false" />
+    <Property Name="BlogTagName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Blog" Relationship="Self.FK_BlogTagList_Blog" FromRole="BlogTagList" ToRole="Blog" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MovieCategories" Relationship="Self.FK_MovieCategory_Category" FromRole="Category" ToRole="MovieCategory" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_Country_UserTable" FromRole="Country" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_Country_UserTable1" FromRole="Country" ToRole="UserTable" />
+    <NavigationProperty Name="MoviePosters" Relationship="Self.FK_MoviePoster_Country" FromRole="Country" ToRole="MoviePoster" />
+    <NavigationProperty Name="States" Relationship="Self.FK_State_Country" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MenuDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MenuStatusID" Type="Int32" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Menu_Status" FromRole="Menu" ToRole="Status" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_Menu_UserTable" FromRole="Menu" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_Menu_UserTable1" FromRole="Menu" ToRole="UserTable" />
+    <NavigationProperty Name="Movies" Relationship="Self.FK_Movie_Menu" FromRole="Menu" ToRole="Movie" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="MovieID" />
+    </Key>
+    <Property Name="MovieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MovieFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Focuskeyphrase" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="SEOTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Menu" Relationship="Self.FK_Movie_Menu" FromRole="Movie" ToRole="Menu" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_Movie_UserTable" FromRole="Movie" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_Movie_UserTable1" FromRole="Movie" ToRole="UserTable" />
+    <NavigationProperty Name="MovieCasts" Relationship="Self.FK_MovieCast_Movie" FromRole="Movie" ToRole="MovieCast" />
+    <NavigationProperty Name="MovieCategories" Relationship="Self.FK_MovieCategory_Movie" FromRole="Movie" ToRole="MovieCategory" />
+    <NavigationProperty Name="MovieInfoes" Relationship="Self.FK_MovieInfo_Movie" FromRole="Movie" ToRole="MovieInfo" />
+    <NavigationProperty Name="MovieTags" Relationship="Self.FK_MovieTag_Movie" FromRole="Movie" ToRole="MovieTag" />
+    <NavigationProperty Name="Redirections" Relationship="Self.FK_Redirection_Movie" FromRole="Movie" ToRole="Redirection" />
+    <NavigationProperty Name="RedirectionLogs" Relationship="Self.FK_RedirectionLogs_Movie" FromRole="Movie" ToRole="RedirectionLogs" />
+  </EntityType>
+  <EntityType Name="MovieCast">
+    <Key>
+      <PropertyRef Name="MovieCastID" />
+    </Key>
+    <Property Name="MovieCastID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="CastImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CastRole" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_MovieCast_Movie" FromRole="MovieCast" ToRole="Movie" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_MovieCast_UserTable" FromRole="MovieCast" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_MovieCast_UserTable1" FromRole="MovieCast" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="MovieCategory">
+    <Key>
+      <PropertyRef Name="MovieCategoryID" />
+    </Key>
+    <Property Name="MovieCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Movie" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_MovieCategory_Category" FromRole="MovieCategory" ToRole="Category" />
+    <NavigationProperty Name="Movie1" Relationship="Self.FK_MovieCategory_Movie" FromRole="MovieCategory" ToRole="Movie" />
+  </EntityType>
+  <EntityType Name="MovieInfo">
+    <Key>
+      <PropertyRef Name="MovieInfoID" />
+    </Key>
+    <Property Name="MovieInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="MovieInfoFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_MovieInfo_Movie" FromRole="MovieInfo" ToRole="Movie" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_MovieInfo_UserTable" FromRole="MovieInfo" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_MovieInfo_UserTable1" FromRole="MovieInfo" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="MoviePoster">
+    <Key>
+      <PropertyRef Name="MoviePosterID" />
+    </Key>
+    <Property Name="MoviePosterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MovieDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReleaseYear" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMBRating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="MovieTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateBy" Type="Int32" Nullable="false" />
+    <Property Name="MovieImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_MoviePoster_Country" FromRole="MoviePoster" ToRole="Country" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_MoviePoster_UserTable" FromRole="MoviePoster" ToRole="UserTable" />
+    <NavigationProperty Name="UserTable1" Relationship="Self.FK_MoviePoster_UserTable1" FromRole="MoviePoster" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="MovieTag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="TagName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_MovieTag_Movie" FromRole="MovieTag" ToRole="Movie" />
+  </EntityType>
+  <EntityType Name="MovieTuner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="TunerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Redirection" Relationship="Self.FK_MovieTuner_Movie" FromRole="MovieTuner" ToRole="Redirection" />
+    <NavigationProperty Name="Tuner" Relationship="Self.FK_MovieTuner_Tuner" FromRole="MovieTuner" ToRole="Tuner" />
+  </EntityType>
+  <EntityType Name="Redirection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SourceURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QueryParameters" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TargetURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GroupDrop" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="TunerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_Redirection_Movie" FromRole="Redirection" ToRole="Movie" />
+    <NavigationProperty Name="MovieTuners" Relationship="Self.FK_MovieTuner_Movie" FromRole="Redirection" ToRole="MovieTuner" />
+    <NavigationProperty Name="Tuner" Relationship="Self.FK_Redirection_Tuner" FromRole="Redirection" ToRole="Tuner" />
+    <NavigationProperty Name="RedirectionLogs" Relationship="Self.FK_RedirectionLogs_Redirection" FromRole="Redirection" ToRole="RedirectionLogs" />
+  </EntityType>
+  <EntityType Name="RedirectionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RedirectionID" Type="Int32" Nullable="false" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="TunerID" Type="Int32" Nullable="false" />
+    <Property Name="IP" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="AccessDate" Type="DateTime" Precision="3" />
+    <Property Name="Hits" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Movie" Relationship="Self.FK_RedirectionLogs_Movie" FromRole="RedirectionLogs" ToRole="Movie" />
+    <NavigationProperty Name="Redirection" Relationship="Self.FK_RedirectionLogs_Redirection" FromRole="RedirectionLogs" ToRole="Redirection" />
+    <NavigationProperty Name="Tuner" Relationship="Self.FK_RedirectionLogs_Tuner" FromRole="RedirectionLogs" ToRole="Tuner" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_State_Country" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK_City_State" FromRole="State" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_Status" FromRole="Status" ToRole="Menu" />
+    <NavigationProperty Name="UserTables" Relationship="Self.FK_UserTable_Status" FromRole="Status" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="TagID" />
+    </Key>
+    <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tuner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TunerName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MovieTuners" Relationship="Self.FK_MovieTuner_Tuner" FromRole="Tuner" ToRole="MovieTuner" />
+    <NavigationProperty Name="Redirections" Relationship="Self.FK_Redirection_Tuner" FromRole="Tuner" ToRole="Redirection" />
+    <NavigationProperty Name="RedirectionLogs" Relationship="Self.FK_RedirectionLogs_Tuner" FromRole="Tuner" ToRole="RedirectionLogs" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Blogs" Relationship="Self.FK_Blog_UserTable" FromRole="UserTable" ToRole="Blog" />
+    <NavigationProperty Name="Blogs1" Relationship="Self.FK_Blog_UserTable1" FromRole="UserTable" ToRole="Blog" />
+    <NavigationProperty Name="Countries" Relationship="Self.FK_Country_UserTable" FromRole="UserTable" ToRole="Country" />
+    <NavigationProperty Name="Countries1" Relationship="Self.FK_Country_UserTable1" FromRole="UserTable" ToRole="Country" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_UserTable" FromRole="UserTable" ToRole="Menu" />
+    <NavigationProperty Name="Menus1" Relationship="Self.FK_Menu_UserTable1" FromRole="UserTable" ToRole="Menu" />
+    <NavigationProperty Name="Movies" Relationship="Self.FK_Movie_UserTable" FromRole="UserTable" ToRole="Movie" />
+    <NavigationProperty Name="Movies1" Relationship="Self.FK_Movie_UserTable1" FromRole="UserTable" ToRole="Movie" />
+    <NavigationProperty Name="MovieCasts" Relationship="Self.FK_MovieCast_UserTable" FromRole="UserTable" ToRole="MovieCast" />
+    <NavigationProperty Name="MovieCasts1" Relationship="Self.FK_MovieCast_UserTable1" FromRole="UserTable" ToRole="MovieCast" />
+    <NavigationProperty Name="MovieInfoes" Relationship="Self.FK_MovieInfo_UserTable" FromRole="UserTable" ToRole="MovieInfo" />
+    <NavigationProperty Name="MovieInfoes1" Relationship="Self.FK_MovieInfo_UserTable1" FromRole="UserTable" ToRole="MovieInfo" />
+    <NavigationProperty Name="MoviePosters" Relationship="Self.FK_MoviePoster_UserTable" FromRole="UserTable" ToRole="MoviePoster" />
+    <NavigationProperty Name="MoviePosters1" Relationship="Self.FK_MoviePoster_UserTable1" FromRole="UserTable" ToRole="MoviePoster" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_UserTable_Status" FromRole="UserTable" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="CustomerUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Advertisements" Relationship="Self.FK_Advertisement_CustomerUser" FromRole="CustomerUser" ToRole="Advertisement" />
+    <NavigationProperty Name="AdvertismentLogs" Relationship="Self.FK_AdvertismentLogs_CustomerUser" FromRole="CustomerUser" ToRole="AdvertismentLogs" />
+    <NavigationProperty Name="HeaderBits" Relationship="Self.FK_HeaderBit_CustomerUser" FromRole="CustomerUser" ToRole="HeaderBit" />
+    <NavigationProperty Name="HeaderBitsLogs" Relationship="Self.FK_HeaderBitsLogs_CustomerUser" FromRole="CustomerUser" ToRole="HeaderBitsLogs" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HeaderBit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CateName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RedirectType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CinmaName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CinmaAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmbdedLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BookingUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="FloorAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BudguetAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CustomerUser" Relationship="Self.FK_HeaderBit_CustomerUser" FromRole="HeaderBit" ToRole="CustomerUser" />
+    <NavigationProperty Name="HeaderBitsLogs" Relationship="Self.FK_HeaderBitsLogs_HeaderBit" FromRole="HeaderBit" ToRole="HeaderBitsLogs" />
+    <Property Name="Country" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HeaderBitsLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IPAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Desktop" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Month" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hits" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RedirectType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TargetUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderID" Type="Int32" Nullable="false" />
+    <Property Name="ButtonType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CustomerUser" Relationship="Self.FK_HeaderBitsLogs_CustomerUser" FromRole="HeaderBitsLogs" ToRole="CustomerUser" />
+    <NavigationProperty Name="HeaderBit" Relationship="Self.FK_HeaderBitsLogs_HeaderBit" FromRole="HeaderBitsLogs" ToRole="HeaderBit" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StateID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StateID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="State" Relationship="Self.FK_City_State" FromRole="City" ToRole="State" />
+  </EntityType>
+  <Association Name="FK_Advertisement_CustomerUser">
+    <End Role="CustomerUser" Type="Self.CustomerUser" Multiplicity="1" />
+    <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdvertismentLogs_CustomerUser">
+    <End Role="CustomerUser" Type="Self.CustomerUser" Multiplicity="1" />
+    <End Role="AdvertismentLogs" Type="Self.AdvertismentLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AdvertismentLogs">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_Menu">
+    <End Role="BlogMenu" Type="Self.BlogMenu" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogMenu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogCategoryList_Blog">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="1" />
+    <End Role="BlogCategoryList" Type="Self.BlogCategoryList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="BlogID" />
+      </Principal>
+      <Dependent Role="BlogCategoryList">
+        <PropertyRef Name="BlogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogTagList_Blog">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="1" />
+    <End Role="BlogTagList" Type="Self.BlogTagList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="BlogID" />
+      </Principal>
+      <Dependent Role="BlogTagList">
+        <PropertyRef Name="BlogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogCategoryList_BlogCategory">
+    <End Role="BlogCategory" Type="Self.BlogCategory" Multiplicity="1" />
+    <End Role="BlogCategoryList" Type="Self.BlogCategoryList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogCategory">
+        <PropertyRef Name="BlogCategoryID" />
+      </Principal>
+      <Dependent Role="BlogCategoryList">
+        <PropertyRef Name="BlogCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieCategory_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="MovieCategory" Type="Self.MovieCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MovieCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Country_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Country" Type="Self.Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Country">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Country_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Country" Type="Self.Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Country">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoviePoster_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="MoviePoster" Type="Self.MoviePoster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="MoviePoster">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="MenuStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieCast_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="MovieCast" Type="Self.MovieCast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieCast">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieCategory_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="MovieCategory" Type="Self.MovieCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieCategory">
+        <PropertyRef Name="Movie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieInfo_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="MovieInfo" Type="Self.MovieInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieInfo">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieTag_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="MovieTag" Type="Self.MovieTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="MovieTag">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Redirection_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="Redirection" Type="Self.Redirection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="Redirection">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RedirectionLogs_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="RedirectionLogs" Type="Self.RedirectionLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="RedirectionLogs">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieCast_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MovieCast" Type="Self.MovieCast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MovieCast">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieCast_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MovieCast" Type="Self.MovieCast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MovieCast">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieInfo_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MovieInfo" Type="Self.MovieInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MovieInfo">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieInfo_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MovieInfo" Type="Self.MovieInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MovieInfo">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoviePoster_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MoviePoster" Type="Self.MoviePoster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MoviePoster">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoviePoster_UserTable1">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="MoviePoster" Type="Self.MoviePoster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MoviePoster">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieTuner_Movie">
+    <End Role="Redirection" Type="Self.Redirection" Multiplicity="1" />
+    <End Role="MovieTuner" Type="Self.MovieTuner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Redirection">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MovieTuner">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieTuner_Tuner">
+    <End Role="Tuner" Type="Self.Tuner" Multiplicity="1" />
+    <End Role="MovieTuner" Type="Self.MovieTuner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tuner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MovieTuner">
+        <PropertyRef Name="TunerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Redirection_Tuner">
+    <End Role="Tuner" Type="Self.Tuner" Multiplicity="1" />
+    <End Role="Redirection" Type="Self.Redirection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tuner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Redirection">
+        <PropertyRef Name="TunerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RedirectionLogs_Redirection">
+    <End Role="Redirection" Type="Self.Redirection" Multiplicity="1" />
+    <End Role="RedirectionLogs" Type="Self.RedirectionLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Redirection">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RedirectionLogs">
+        <PropertyRef Name="RedirectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RedirectionLogs_Tuner">
+    <End Role="Tuner" Type="Self.Tuner" Multiplicity="1" />
+    <End Role="RedirectionLogs" Type="Self.RedirectionLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tuner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RedirectionLogs">
+        <PropertyRef Name="TunerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTable_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="UserTable">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeaderBit_CustomerUser">
+    <End Role="CustomerUser" Type="Self.CustomerUser" Multiplicity="1" />
+    <End Role="HeaderBit" Type="Self.HeaderBit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeaderBit">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeaderBitsLogs_CustomerUser">
+    <End Role="CustomerUser" Type="Self.CustomerUser" Multiplicity="1" />
+    <End Role="HeaderBitsLogs" Type="Self.HeaderBitsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeaderBitsLogs">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeaderBitsLogs_HeaderBit">
+    <End Role="HeaderBit" Type="Self.HeaderBit" Multiplicity="1" />
+    <End Role="HeaderBitsLogs" Type="Self.HeaderBitsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeaderBit">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeaderBitsLogs">
+        <PropertyRef Name="HeaderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="einfoies_infoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Advertisements" EntityType="Self.Advertisement" />
+    <EntitySet Name="AdvertismentLogs" EntityType="Self.AdvertismentLog" />
+    <EntitySet Name="Blogs" EntityType="Self.Blog" />
+    <EntitySet Name="BlogCategories" EntityType="Self.BlogCategory" />
+    <EntitySet Name="BlogCategoryLists" EntityType="Self.BlogCategoryList" />
+    <EntitySet Name="BlogMenus" EntityType="Self.BlogMenu" />
+    <EntitySet Name="BlogTags" EntityType="Self.BlogTag" />
+    <EntitySet Name="BlogTagLists" EntityType="Self.BlogTagList" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="Movies" EntityType="Self.Movie" />
+    <EntitySet Name="MovieCasts" EntityType="Self.MovieCast" />
+    <EntitySet Name="MovieCategories" EntityType="Self.MovieCategory" />
+    <EntitySet Name="MovieInfoes" EntityType="Self.MovieInfo" />
+    <EntitySet Name="MoviePosters" EntityType="Self.MoviePoster" />
+    <EntitySet Name="MovieTags" EntityType="Self.MovieTag" />
+    <EntitySet Name="MovieTuners" EntityType="Self.MovieTuner" />
+    <EntitySet Name="Redirections" EntityType="Self.Redirection" />
+    <EntitySet Name="RedirectionLogs" EntityType="Self.RedirectionLog" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Tags" EntityType="Self.Tag" />
+    <EntitySet Name="Tuners" EntityType="Self.Tuner" />
+    <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+    <EntitySet Name="CustomerUsers" EntityType="Self.CustomerUser" />
+    <EntitySet Name="HeaderBits" EntityType="Self.HeaderBit" />
+    <EntitySet Name="HeaderBitsLogs" EntityType="Self.HeaderBitsLog" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <AssociationSet Name="FK_Advertisement_CustomerUser" Association="Self.FK_Advertisement_CustomerUser">
+      <End Role="CustomerUser" EntitySet="CustomerUsers" />
+      <End Role="Advertisement" EntitySet="Advertisements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdvertismentLogs_CustomerUser" Association="Self.FK_AdvertismentLogs_CustomerUser">
+      <End Role="CustomerUser" EntitySet="CustomerUsers" />
+      <End Role="AdvertismentLogs" EntitySet="AdvertismentLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_Menu" Association="Self.FK_Blog_Menu">
+      <End Role="BlogMenu" EntitySet="BlogMenus" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_UserTable" Association="Self.FK_Blog_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_UserTable1" Association="Self.FK_Blog_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogCategoryList_Blog" Association="Self.FK_BlogCategoryList_Blog">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="BlogCategoryList" EntitySet="BlogCategoryLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogTagList_Blog" Association="Self.FK_BlogTagList_Blog">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="BlogTagList" EntitySet="BlogTagLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogCategoryList_BlogCategory" Association="Self.FK_BlogCategoryList_BlogCategory">
+      <End Role="BlogCategory" EntitySet="BlogCategories" />
+      <End Role="BlogCategoryList" EntitySet="BlogCategoryLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieCategory_Category" Association="Self.FK_MovieCategory_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="MovieCategory" EntitySet="MovieCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Country_UserTable" Association="Self.FK_Country_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Country" EntitySet="Countries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Country_UserTable1" Association="Self.FK_Country_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Country" EntitySet="Countries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoviePoster_Country" Association="Self.FK_MoviePoster_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="MoviePoster" EntitySet="MoviePosters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_Country" Association="Self.FK_State_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Status" Association="Self.FK_Menu_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_UserTable" Association="Self.FK_Menu_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_UserTable1" Association="Self.FK_Menu_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Menu" Association="Self.FK_Movie_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_UserTable" Association="Self.FK_Movie_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_UserTable1" Association="Self.FK_Movie_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieCast_Movie" Association="Self.FK_MovieCast_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieCast" EntitySet="MovieCasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieCategory_Movie" Association="Self.FK_MovieCategory_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieCategory" EntitySet="MovieCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieInfo_Movie" Association="Self.FK_MovieInfo_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieInfo" EntitySet="MovieInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieTag_Movie" Association="Self.FK_MovieTag_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieTag" EntitySet="MovieTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Redirection_Movie" Association="Self.FK_Redirection_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Redirection" EntitySet="Redirections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RedirectionLogs_Movie" Association="Self.FK_RedirectionLogs_Movie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="RedirectionLogs" EntitySet="RedirectionLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieCast_UserTable" Association="Self.FK_MovieCast_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MovieCast" EntitySet="MovieCasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieCast_UserTable1" Association="Self.FK_MovieCast_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MovieCast" EntitySet="MovieCasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieInfo_UserTable" Association="Self.FK_MovieInfo_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MovieInfo" EntitySet="MovieInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieInfo_UserTable1" Association="Self.FK_MovieInfo_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MovieInfo" EntitySet="MovieInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoviePoster_UserTable" Association="Self.FK_MoviePoster_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MoviePoster" EntitySet="MoviePosters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoviePoster_UserTable1" Association="Self.FK_MoviePoster_UserTable1">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="MoviePoster" EntitySet="MoviePosters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieTuner_Movie" Association="Self.FK_MovieTuner_Movie">
+      <End Role="Redirection" EntitySet="Redirections" />
+      <End Role="MovieTuner" EntitySet="MovieTuners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieTuner_Tuner" Association="Self.FK_MovieTuner_Tuner">
+      <End Role="Tuner" EntitySet="Tuners" />
+      <End Role="MovieTuner" EntitySet="MovieTuners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Redirection_Tuner" Association="Self.FK_Redirection_Tuner">
+      <End Role="Tuner" EntitySet="Tuners" />
+      <End Role="Redirection" EntitySet="Redirections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RedirectionLogs_Redirection" Association="Self.FK_RedirectionLogs_Redirection">
+      <End Role="Redirection" EntitySet="Redirections" />
+      <End Role="RedirectionLogs" EntitySet="RedirectionLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RedirectionLogs_Tuner" Association="Self.FK_RedirectionLogs_Tuner">
+      <End Role="Tuner" EntitySet="Tuners" />
+      <End Role="RedirectionLogs" EntitySet="RedirectionLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_State" Association="Self.FK_City_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTable_Status" Association="Self.FK_UserTable_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UserTable" EntitySet="UserTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeaderBit_CustomerUser" Association="Self.FK_HeaderBit_CustomerUser">
+      <End Role="CustomerUser" EntitySet="CustomerUsers" />
+      <End Role="HeaderBit" EntitySet="HeaderBits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeaderBitsLogs_CustomerUser" Association="Self.FK_HeaderBitsLogs_CustomerUser">
+      <End Role="CustomerUser" EntitySet="CustomerUsers" />
+      <End Role="HeaderBitsLogs" EntitySet="HeaderBitsLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeaderBitsLogs_HeaderBit" Association="Self.FK_HeaderBitsLogs_HeaderBit">
+      <End Role="HeaderBit" EntitySet="HeaderBits" />
+      <End Role="HeaderBitsLogs" EntitySet="HeaderBitsLogs" />
+    </AssociationSet>
+    <EntitySet Name="CustomerLogs" EntityType="Model1.CustomerLog" />
+    <EntitySet Name="SignUps" EntityType="Model1.SignUp" />
+  </EntityContainer>
+  <EntityType Name="CustomerLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Browser" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OsWindow" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IPAdress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Logs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SignUp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlanType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PlanStartDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlanEndDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Month" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

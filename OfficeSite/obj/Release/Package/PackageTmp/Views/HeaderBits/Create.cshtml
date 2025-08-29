@@ -1,0 +1,460 @@
+﻿@model E_infoGlobalNew.Models.HeaderBit
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Colmn {
+        margin-top: 10px;
+    }
+
+    .upclonm {
+        margin-top: -25px;
+        text-decoration: none;
+    }
+
+    #UpdateBy {
+        display: none;
+    }
+
+</style>
+@using (Html.BeginForm("Create", "HeaderBits", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-6">
+                <label>Title</label>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Country</label>
+                <select name="Country" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="American Samoa">American Samoa</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Anguilla">Anguilla</option>
+                    <option value="Antartica">Antarctica</option>
+                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bermuda">Bermuda</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Bouvet Island">Bouvet Island</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                    <option value="Brunei Darussalam">Brunei Darussalam</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Cape Verde">Cape Verde</option>
+                    <option value="Cayman Islands">Cayman Islands</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Christmas Island">Christmas Island</option>
+                    <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Congo">Congo, the Democratic Republic of the</option>
+                    <option value="Cook Islands">Cook Islands</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Cota D'Ivoire">Cote d'Ivoire</option>
+                    <option value="Croatia">Croatia (Hrvatska)</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="East Timor">East Timor</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+                    <option value="Faroe Islands">Faroe Islands</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="France Metropolitan">France, Metropolitan</option>
+                    <option value="French Guiana">French Guiana</option>
+                    <option value="French Polynesia">French Polynesia</option>
+                    <option value="French Southern Territories">French Southern Territories</option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Greenland">Greenland</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guadeloupe">Guadeloupe</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guinea-Bissau">Guinea-Bissau</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Heard and McDonald Islands">Heard and Mc Donald Islands</option>
+                    <option value="Holy See">Holy See (Vatican City State)</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Iran">Iran (Islamic Republic of)</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
+                    <option value="Korea">Korea, Republic of</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Lao">Lao People's Democratic Republic</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Macedonia">Macedonia, The Former Yugoslav Republic of</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Martinique">Martinique</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mayotte">Mayotte</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Micronesia">Micronesia, Federated States of</option>
+                    <option value="Moldova">Moldova, Republic of</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Namibia">Namibia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Netherlands Antilles">Netherlands Antilles</option>
+                    <option value="New Caledonia">New Caledonia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Niue">Niue</option>
+                    <option value="Norfolk Island">Norfolk Island</option>
+                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau">Palau</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Pitcairn">Pitcairn</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russian Federation</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                    <option value="Saint LUCIA">Saint LUCIA</option>
+                    <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
+                    <option value="Samoa">Samoa</option>
+                    <option value="San Marino">San Marino</option>
+                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Sierra">Sierra Leone</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia (Slovak Republic)</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Solomon Islands">Solomon Islands</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Georgia">South Georgia and the South Sandwich Islands</option>
+                    <option value="Span">Spain</option>
+                    <option value="SriLanka">Sri Lanka</option>
+                    <option value="St. Helena">St. Helena</option>
+                    <option value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Svalbard">Svalbard and Jan Mayen Islands</option>
+                    <option value="Swaziland">Swaziland</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syrian Arab Republic</option>
+                    <option value="Taiwan">Taiwan, Province of China</option>
+                    <option value="Tajikistan">Tajikistan</option>
+                    <option value="Tanzania">Tanzania, United Republic of</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Tokelau">Tokelau</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Turks and Caicos">Turks and Caicos Islands</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnam">Viet Nam</option>
+                    <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                    <option value="Virgin Islands (U.S)">Virgin Islands (U.S.)</option>
+                    <option value="Wallis and Futana Islands">Wallis and Futuna Islands</option>
+                    <option value="Western Sahara">Western Sahara</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label>Cinima Address</label>
+                @Html.EditorFor(model => model.CinmaAdress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CinmaAdress, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Customer Name</label>
+                @Html.DropDownList("CustomerID", null, htmlAttributes: new { @class = "form-control select2" })
+                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Floor Rent Amount</label>
+                @Html.EditorFor(model => model.FloorAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FloorAmount, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Budget Amount</label>
+                @Html.EditorFor(model => model.BudguetAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BudguetAmount, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Image</label>
+                <input type="file" class="form-control" name="Upload" id="Upload" accept=".jpg, .png," />
+            </div>
+            <div class="col-6">
+                <label>Redirection Type</label>
+                <select id="RedirectType" name="RedirectType" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="OnSite">On-Site</option>
+                    <option value="OficalSite">Offical-Site</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label>Page Type</label>
+                <select id="PageType" name="PageType" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="OtherPages">Other-Pages</option>
+                    <option value="CategoryPages">Category-Pages</option>
+                </select>
+            </div>
+            <div class="col-12" id="Embded">
+                <label>Embded Link <span class="font-size-10">(For On Site)</span></label>
+                @Html.EditorFor(model => model.EmbdedLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmbdedLink, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12" id="Target">
+                <label>Target Page <span class="font-size-10">(For Offical Site)</span></label>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12">
+                <label>Booking Ticket Url</label>
+                @Html.EditorFor(model => model.BookingUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BookingUrl, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Cinima Name</label>
+                @Html.EditorFor(model => model.CinmaName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CinmaName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6" id="HideCategory">
+                <label>Category Name</label>
+                <select id="Category" name="Category" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="Action Adventure">Action Adventure</option>
+                    <option value="Action Comedy">Action Comedy</option>
+                    <option value="Action Thriller">Action Thriller</option>
+                    <option value="Adventure Movies">Adventure Movies</option>
+                    <option value="All Time Hits">All Time Hits</option>
+                    <option value="Amazon Prime Video">Amazon Prime Video</option>
+                    <option value="Animated Movies">Animated Movies</option>
+                    <option value="Apple Tv Movies">Apple Tv Movies</option>
+                    <option value="Bank Robbery Movies">Bank Robbery Movies</option>
+                    <option value="Best Director">Best Director</option>
+                    <option value="Best Entrepreneur Movies">Best Entrepreneur Movies</option>
+                    <option value="Best Movies 2022">Best Movies 2022</option>
+                    <option value="Biographical movies">Biographical movies</option>
+                    <option value="Biopics Movies">Biopics Movies</option>
+                    <option value="Classic Movies">Classic Movies</option>
+                    <option value="Comedy Movies">Comedy Movies</option>
+                    <option value="Crime Drama">Crime Drama</option>
+                    <option value="Disney Movies">Disney Movies</option>
+                    <option value="Drama Collection">Drama Collection</option>
+                    <option value="Escape Movies">Escape Movies</option>
+                    <option value="Family Movies">Family Movies</option>
+                    <option value="Fiction Adventure">Fiction Adventure</option>
+                    <option value="Gangster Movies">Gangster Movies</option>
+                    <option value="HBO Max">HBO Max</option>
+                    <option value="Historical">Historical</option>
+                    <option value="Horror Movies">Horror Movies</option>
+                    <option value="Hulu Movies">Hulu Movies</option>
+                    <option value="Jungle Adventure">Jungle Adventure</option>
+                    <option value="Latest Movies">Latest Movies</option>
+                    <option value="Love Comedy">Love Comedy</option>
+                    <option value="Love Story">Love Story</option>
+                    <option value="Love Thriller">Love Thriller</option>
+                    <option value="Mystery Drama">Mystery Drama</option>
+                    <option value="Netflix Movies">Netflix Movies</option>
+                    <option value="Oscar Winning">Oscar Winning</option>
+                    <option value="Peacock Movies">Peacock Movies</option>
+                    <option value="Political Drama">Political Drama</option>
+                    <option value="Psychological Thriller">Psychological Thriller</option>
+                    <option value="Recent Uploads">Recent Uploads</option>
+                    <option value="Romantic Comedy">Romantic Comedy</option>
+                    <option value="Romantic Movies">Romantic Movies</option>
+                    <option value="Sci-Fic">Sci-Fic</option>
+                    <option value="Sports Drama">Sports Drama</option>
+                    <option value="Spy Thriller">Spy Thriller</option>
+                    <option value="Superhero Movies">Superhero Movies</option>
+                    <option value="Sword Movies">Sword Movies</option>
+                    <option value="Thriller Movies">Thriller Movies</option>
+                    <option value="Tiral Movies">Tiral Movies</option>
+                    <option value="Top 10 Movies">Top 10 Movies</option>
+                    <option value="Top 5 Movies">Top 5 Movies</option>
+                    <option value="True Story">True Story</option>
+                    <option value="Vampire Movies">Vampire Movies</option>
+                    <option value="War Movies">War Movies</option>
+                    <option value="Western Movies">Western Movies</option>
+                </select>
+            </div>
+            <div class="col-6" id="HideOther">
+                <label>Other Pages</label>
+                <select id="Other" name="Other" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="Landing">Landing</option>
+                    <option value="Blog">Blog</option>
+                    <option value="Early Life Film Career Struggle">Early Life Film Career Struggle</option>
+                    <option value="Top 50 Movies">Top 50 Movies</option>
+                    <option value="Movie Reviews">Movie Reviews</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label>Status</label>
+                <select id="Status" name="Status" class="form-control select2">
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+            </div>
+            <div class="form-group Colmn">
+                <div class="float-end">
+                    <input type="submit" value="Save" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="upclonm btn btn-dark">
+    @Html.ActionLink("Back", "Index")
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#RedirectType").change(function () {
+            var selectedValue = $(this).val();
+            if (selectedValue == "OnSite") {
+                $("#Embded").show();
+                $("#Target").hide();
+            }
+            if (selectedValue == "OficalSite") {
+                $("#Embded").hide();
+                $("#Target").show();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $("#PageType").change(function () {
+            var selectedValue = $(this).val();
+            if (selectedValue == "0") {
+                $("#HideOther").hide();
+                $("#HideCategory").hide();
+            }
+            if (selectedValue == "OtherPages") {
+                $("#HideOther").show();
+                $("#HideCategory").hide();
+            }
+            if (selectedValue == "CategoryPages") {
+                $("#HideOther").hide();
+                $("#HideCategory").show();
+            }
+        });
+    });
+</script>

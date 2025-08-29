@@ -1,0 +1,191 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.Advertisement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .colmn {
+        margin-top: 10px;
+    }
+
+    .fa-trash-alt {
+        color: red;
+    }
+
+    .fa-pencil-alt {
+        color: green;
+    }
+
+    .fa-eye {
+        color: black;
+    }
+</style>
+<p class="btn btn-info float-end colmn">
+    @Html.ActionLink("Add New", "Create")
+<p />
+<button type="button" class="btn btn-info  colmn" data-bs-toggle="modal" data-bs-target="#myModal">Status</button>
+
+<!-- sample modal content -->
+<div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Status Update</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/Advertisements/UpdateStatus" method="post">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="fw-bold">Customer</label>
+                                <select name="CustomerID" class="form-control">
+                                    @if (ViewBag.Customer != null)
+                                    {
+                                        <option value="0">--Select--</option>
+                                        foreach (var item in ViewBag.Customer)
+                                        {
+                                            <option value="@item.ID">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="fw-bold">Status</label>
+                                <select name="Status" class="form-control">
+                                    <option value="Active">Active</option>
+                                    <option value="In-Active">In-Active</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bold">Customer</label>
+            </th>
+            <th>
+                <label class="fw-bold">Country</label>
+            </th>
+            <th>
+                <label class="fw-bold">Page Type</label>
+            </th>
+            <th>
+                <label class="fw-bold">Placement</label>
+            </th>
+            <th>
+                <label class="fw-bold">Sub Type</label>
+            </th>
+            <th>
+                <label class="fw-bold">Ads Type</label>
+            </th>
+            <th>
+                <label class="fw-bold">Seq No</label>
+            </th>
+            <th>
+                <label class="fw-bold">Budget</label>
+            </th>
+            <th>
+                <label class="fw-bold">Status</label>
+            </th>
+            <th>
+                <label class="fw-bold">Action</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerUser.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Placement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageSubType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdsType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeqOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BudgetAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-success fas fa-pencil-alt" })
+                        @*@if (ViewBag.Session == "ma.kadir")
+                        {
+                            using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "btn btn-danger fas fa-trash-alt" })
+                            }
+                        }
+                        @if (ViewBag.Session == "shahnehal")
+                        {
+                            using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "btn btn-danger fas fa-trash-alt" })
+                            }
+                        }*@
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Delete"] != null)
+{
+    <script>
+        swal("Delete!", "@TempData["Delete"]", "success");
+    </script>
+}
+@if (TempData["Edit"] != null)
+{
+    <script>
+        swal("Edit!", "@TempData["Edit"]", "success");
+    </script>
+}
+@if (TempData["Save"] != null)
+{
+
+    <script>
+        swal("Save!", "@TempData["Save"]", "success");
+    </script>
+
+}
+@if (TempData["Update"] != null)
+{
+
+    <script>
+        swal("Update!", "@TempData["Update"]", "success");
+    </script>
+
+}

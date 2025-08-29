@@ -1,0 +1,83 @@
+﻿@model E_infoGlobalNew.Models.User
+
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="row">
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Name">Name</label>
+                            <input type="text" name="Name" id="nm" class="form-control">
+                            <input type="hidden" name="Id"  id="d" class="form-control">
+                            <input type="hidden" name="CreatedBy"  id="create" class="form-control">
+                            <input type="hidden" name="CreatedDateTime"  id="datetime" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="UserName">Username</label>
+                            <input type="text" name="UserName"  id="user" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Password">Password</label>
+                            <input type="text" name="Password"  id="pass" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Email">Email</label>
+                            <input type="text" name="Email"  id="mail" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Sta">Select</label>
+                            <select name="Status"  id="st" class="form-control">
+                                <option>Enable</option>
+                                <option>Disable</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    debugger
+    const url = window.location.pathname; // gets the path part
+    const match = url.match(/(\d+)(?!.*\d)/); // regex to get the last number
+    const Id = match ? match[0] : null;
+    getUserById(Id);
+    function getUserById(Id) {
+        debugger
+        $.ajax({
+            url: '/User/GetRecord',
+            type: 'GET',
+            data: { Id: Id },
+            success: function (Records) {
+
+                console.log(Records);
+                $('#create').val(Records.CreatedBy);
+                $('#datetime').val(Records.CreatedDateTime);
+                $('#mail').val(Records.Email);
+                $('#d').val(Records.Id);
+                $('#nm').val(Records.Name);
+                $('#pass').val(Records.Password);
+                $('#st').val(Records.Status);
+                $('#user').val(Records.UserName);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+
+    // Example usage
+    
+</script>

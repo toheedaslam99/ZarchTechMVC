@@ -1,0 +1,129 @@
+﻿@model E_infoGlobalNew.Models.EmailClass
+@{
+    ViewBag.Title = "Guest Posting";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<div class="iq-breadcrumb-one  iq-bg-over iq-over-dark-50" style="background-image: url(../../NewTheme/images/about-us/01.jpg);">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <nav aria-label="breadcrumb" class="text-center iq-breadcrumb-two">
+                    <h2 class="title">Guest Posting</h2>
+                    <ol class="breadcrumb main-bg">
+                        <li class="breadcrumb-item"><a href="@Url.Action("LandingPage","Design")">Home</a></li>
+                        <li class="breadcrumb-item active">Guest Posting</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main container -->
+<main id="main" class="site-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="iq-title-box iq-box iq-title-default">
+                    <h3 class="iq-title">
+                        Requirements
+                    </h3>
+                    <br />
+                    <strong class="iq-title-desc">Article should be in word document.</strong>
+                    <br />
+                    <strong class="iq-title-desc">Article should include one picture as thumbnail.</strong>
+                    <br />
+                    <strong class="iq-title-desc">Blog should be consist of 800+ words, meta title and description included.</strong>
+                    <br />
+                    <strong class="iq-title-desc">Article should be plagarism & AI Free</strong>
+                    <br />
+                    <strong class="iq-title-desc">your website url or Article Url</strong>
+                    <br />
+                    <br />
+                    <h3 class="iq-title">
+                        Note 
+                    </h3>
+                    <strong class="iq-title-desc">We will only accept Guest posting of Entertainment Niches</strong>
+                    <br />
+                    <br />
+                    <h3 class="iq-title">
+                        Cost 
+                    </h3>
+                    <strong class="iq-title-desc">
+                        We will give you 1 Do-follow backlinks within the article at the
+                        cost of 6$
+                    </strong>
+                </div>
+                <div class="wrapper">
+                    <form action="~/Admin/emialsend" method="post" class="wpcf7-form init contact_foam" enctype="multipart/form-data">
+                        <div class="contact-form contact-style">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap your-name">
+                                            <input type="hidden" name="Select" value="Guest Posting">
+                                            <input type="text" name="Name" id="text_name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required " aria-required="true" aria-invalid="false" placeholder="Your Name">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap your-subject">
+                                            <input type="text" name="Last" value="" id="text_subject" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required " aria-required="true" aria-invalid="false" placeholder="Last Name">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap tel-478">
+                                            <input type="tel" name="tel-478" value="" size="40" maxlength="140" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel text_tel" aria-required="true" aria-invalid="false" placeholder="Phone Number">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap your-email">
+                                            <input type="email" name="Email" value="" id="text_email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap your-message">
+                                            <input type="file" aria-required="true" aria-invalid="false" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required " id="fileInput" name="File" multiple />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cfield">
+                                        <span class="wpcf7-form-control-wrap your-message">
+                                            <textarea name="Message" cols="40" rows="10" id="text_message" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required " aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Send" class="btn btn-hover iq-button">
+                                        <span class="iq-btn-text-holder">Send Message</span>
+                                        <span class="iq-btn-icon-holder">
+                                            <i aria-hidden="true" class="ion ion-plus"></i>
+                                        </span>
+                                        <br>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpcf7-response-output" aria-hidden="true"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Main container end -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (ViewBag.Message != null)
+{
+    <script>
+        swal("Sent!", "@ViewBag.Message", "success");
+    </script>
+}
+

@@ -1,0 +1,23 @@
+﻿@model E_infoGlobalNew.Models.MovieTag
+
+@{
+    ViewBag.Title = "EditTags";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="~/movies/EditTags" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <label>Tag Name</label>
+                <input hidden value="@Model.ID" name="ID" />
+                <input hidden value="@Model.MovieID" name="MovieID" />
+                <textarea cols="5" class="form-control" name="TagName">@Model.TagName</textarea>
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Update" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+</form>
+

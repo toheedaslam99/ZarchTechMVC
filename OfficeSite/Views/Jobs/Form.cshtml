@@ -1,0 +1,89 @@
+﻿@model E_infoGlobalNew.Models.Job
+
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "Jobs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="row">
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Name">Name</label>
+                            <input type="text" name="JobType" id="nm" class="form-control">
+                            <input type="hidden" name="Id"  id="d" class="form-control">
+                            <input type="hidden" name="CreatedBy"  id="create" class="form-control">
+                            <input type="hidden" name="CreatedDateTime"  id="datetime" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Position">Position</label>
+                            <input type="text" name="Position"  id="pos" class="form-control">
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="EmploymentType">Employment Type</label>
+                            <input type="text" name="EmploymentType"  id="type" class="form-control">
+                        </div>
+                        <div class="col-md-12 form-group mb-3">
+                            <label for="Description">Description</label>
+                            <textarea class="form-control" name="Description" id="desc"></textarea>
+                        </div>
+                        <div class="col-md-4 form-group mb-3">
+                            <label for="Sta">Select</label>
+                            <select name="Status"  id="st" class="form-control">
+                                <option>Enable</option>
+                                <option>Disable</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    debugger
+    CKEDITOR.replace('desc');
+    //const url = window.location.pathname; // e.g., /page/1
+    //const segments = url.split('/').filter(Boolean); // removes empty strings
+    //const Id = segments.length ? segments[segments.length - 1] : null;
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const Id = pathSegments[pathSegments.length - 1];
+    console.log(Id);
+    getUserById(Id);
+    function getUserById(Id) {
+        debugger
+        $.ajax({
+            url: '/Jobs/GetRecord',
+            type: 'GET',
+            data: { Id: Id },
+            success: function (Records) {
+
+                console.log(Records);
+                $('#create').val(Records.CreatedBy);
+                $('#datetime').val(Records.CreatedDateTime);
+                $('#pos').val(Records.Position);
+                $('#d').val(Records.Id);
+                $('#nm').val(Records.JobType);
+                $('#type').val(Records.EmploymentType);
+                $('#st').val(Records.Status);
+                $('#desc').val(Records.Description);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+
+    // Example usage
+    
+</script>

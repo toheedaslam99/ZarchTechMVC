@@ -1,0 +1,114 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.UserTable>
+
+@{
+    ViewBag.Title = "User List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .colmn {
+        margin-top: 10px;
+    }
+
+    .fa-trash-alt {
+        color: red;
+    }
+
+    .fa-pencil-alt {
+        color: green;
+    }
+</style>
+<p class="btn btn-info float-end colmn">
+    @Html.ActionLink("Add New", "Create")
+<p />
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bold">User Name</label>
+            </th>
+            <th>
+                <label class="fw-bold">Password</label>
+            </th>
+            <th>
+                <label class="fw-bold">Name</label>
+            </th>
+            <th>
+                <label class="fw-bold">Email</label>
+            </th>
+            <th>
+                <label class="fw-bold">Contact No.</label>
+            </th>
+            <th>
+                <label class="fw-bold">Status</label>
+            </th>
+            <th>
+                <label class="fw-bold">Action</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.StatusName)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        @Html.ActionLink(" ", "Edit", new { id = item.UserID }, new { @class = "btn btn-success fas fa-pencil-alt" })
+                        @if (ViewBag.Session == "ma.kadir")
+                        {
+                            using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ActionLink(" ", "Delete", new { id = item.UserID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "btn btn-danger fas fa-trash-alt" })
+                            }
+                        }
+                        @if (ViewBag.Session == "shahnehal")
+                        {
+                            using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ActionLink(" ", "Delete", new { id = item.UserID }, new { onclick = "return confirm('Are you sure you want to delete this Record?');", @class = "btn btn-danger fas fa-trash-alt" })
+                            }
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (TempData["Delete"] != null)
+{
+    <script>
+        swal("Delete!", "@TempData["Delete"]", "success");
+    </script>
+}
+@if (TempData["Edit"] != null)
+{
+    <script>
+        swal("Edit!", "@TempData["Edit"]", "success");
+    </script>
+}
+@if (TempData["Save"] != null)
+{
+    <script>
+        swal("Save!", "@TempData["Save"]", "success");
+    </script>
+}

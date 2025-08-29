@@ -1,0 +1,126 @@
+﻿@model E_infoGlobalNew.Models.CustomerUser
+
+@{
+    ViewBag.Title = "Customer Logs";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Header Logs</h1>
+            <table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+                <thead>
+                    <tr>
+                        @*<th>
+                            <label class="fw-bold">IP</label>
+                        </th>*@
+                        <th>
+                            <label class="fw-bold">Country</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Date</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Time</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Status</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Content Name</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Target Url</label>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.HeaderBitsLogs.Where(x => x.UserID == Model.ID).OrderByDescending(x => x.ID).ToList())
+                    {
+                    <tr>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.IPAdress)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StatusCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HeaderBit.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TargetUrl)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12">
+            <h1>Advertise Logs</h1>
+            <table id="tblUser2" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+                <thead>
+                    <tr>
+                        @*<th>
+                            <label class="fw-bold">IP</label>
+                        </th>*@
+                        <th>
+                            <label class="fw-bold">Country</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Date</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Time</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Status</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Content Name</label>
+                        </th>
+                        <th>
+                            <label class="fw-bold">Target Url</label>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AdvertismentLogs.Where(x => x.CustomerID == Model.ID).OrderByDescending(x => x.ID).ToList())
+                    {
+                    <tr>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.IPAdress)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StatusCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TragetUrl)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

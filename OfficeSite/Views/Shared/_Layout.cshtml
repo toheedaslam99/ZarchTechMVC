@@ -1,0 +1,673 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="Favicon.png">
+
+    <link rel="stylesheet preload" href="~/Content/assets/css/vendor/bootstrap.min.css" as="style" media="print"
+          onload="this.media='all'">
+    <link rel="stylesheet preload" href="~/Content/assets/css/plugins/fontawesome.css" as="style" media="print"
+          onload="this.media='all'">
+    <link rel="stylesheet preload" href="~/Content/assets/css/plugins/magnifying-popup.css" as="style" media="print"
+          onload="this.media='all'">
+    <link rel="stylesheet preload" href="~/Content/assets/css/plugins/swiper.css" as="style" media="print"
+          onload="this.media='all'">
+    <link rel="stylesheet preload" href="~/Content/assets/css/plugins/metismenu.css" as="style" media="print"
+          onload="this.media='all'">
+    <link rel="stylesheet preload" href="~/Content/assets/css/style.css" as="style">
+    <link rel="stylesheet preload" href="~/Content/assets/css/toastr.css" as="style">
+</head>
+<body>
+    <header class="header-style-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-wrapper-1">
+                        <a href="index-2.html" class="logo-area">
+                            <img src="~/Content/assets/Z-1.png" alt="logo">
+                        </a>
+                        <div class="nav-area">
+                            <nav>
+                                <ul>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/index">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/about">
+                                            About
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown position-static with-megamenu">
+                                        <a class="nav-link" href="service.html">
+                                            Service <i class="fa-duotone fa-regular fa-chevron-down"></i>
+                                        </a>
+                                        <div class="submenu">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="service-single.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/22.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Accounting Services</h4>
+                                                                        <p>Moving data to cloud infrastructure.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-strategies.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/23.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">IT Outsourcing</h4>
+                                                                        <p>Alignment, Innovation Scalability.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="cyber-security-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/24.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Inventory Management</h4>
+                                                                        <p>Protecting data software and networks.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="technologies-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/25.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">CCTV Camera Monitoring</h4>
+                                                                        <p>Empowering, innovative, transformative.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-consulting-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/26.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Payroll Management</h4>
+                                                                        <p>Expertise-driven technology problem-solving.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="development-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/27.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Reporting Services</h4>
+                                                                        <p>Creating innovative solutions through technology.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="ai-learning-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/28.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Travel Arrangements</h4>
+                                                                        <p>Empowering machines to mimic intelligence.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="management-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/29.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Background Checking And Onboarding</h4>
+                                                                        <p>Organizing resources to achieve goals</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-innovations.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/30.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Maintenance Management</h4>
+                                                                        <p>Transforming ideas into digital solutions.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="ai-learning-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/28.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Commissions And Incentives Management</h4>
+                                                                        <p>Empowering machines to mimic intelligence.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="management-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/29.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Suppliers Management</h4>
+                                                                        <p>Organizing resources to achieve goals</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-innovations.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/30.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Banking Services</h4>
+                                                                        <p>Transforming ideas into digital solutions.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/career">
+                                            Career
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/contact">
+                                            Contact
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="button-area-right-header">
+                            <a href="/home/contact" class="rts-btn btn-border">
+                                Get in touch
+                                <img class="injectable" src="~/Content/assets/images/service/icons/13.svg" alt="arrow">
+                            </a>
+                            <div class="menu-btn-toggle">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="header-style-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-wrapper-1">
+                        <a href="index-2.html" class="logo-area">
+                            <img src="~/Content/assets/images/logo/logo-1.svg" alt="logo">
+                        </a>
+                        <div class="nav-area">
+                            <nav>
+                                <ul>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/index">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/about">
+                                            About
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown position-static with-megamenu">
+                                        <a class="nav-link" href="service.html">
+                                            Service <i class="fa-duotone fa-regular fa-chevron-down"></i>
+                                        </a>
+                                        <div class="submenu">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="service-single.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/22.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Accounting Services</h4>
+                                                                        <p>Moving data to cloud infrastructure.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-strategies.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/23.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">IT Outsourcing</h4>
+                                                                        <p>Alignment, Innovation Scalability.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="cyber-security-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/24.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Inventory Management</h4>
+                                                                        <p>Protecting data software and networks.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="technologies-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/25.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">CCTV Camera Monitoring</h4>
+                                                                        <p>Empowering, innovative, transformative.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-consulting-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/26.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Payroll Management</h4>
+                                                                        <p>Expertise-driven technology problem-solving.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="development-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/27.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Reporting Services</h4>
+                                                                        <p>Creating innovative solutions through technology.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="ai-learning-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/28.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Travel Arrangements</h4>
+                                                                        <p>Empowering machines to mimic intelligence.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="management-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/29.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Background Checking And Onboarding</h4>
+                                                                        <p>Organizing resources to achieve goals</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-innovations.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/30.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Maintenance Management</h4>
+                                                                        <p>Transforming ideas into digital solutions.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="single-menu parent-nav">
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="ai-learning-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/28.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Commissions And Incentives Management</h4>
+                                                                        <p>Empowering machines to mimic intelligence.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="management-service.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/29.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Suppliers management</h4>
+                                                                        <p>Organizing resources to achieve goals</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="single-service-area-wrapper" href="it-innovations.html">
+                                                                    <div class="icon">
+                                                                        <img src="~/Content/assets/images/service/icons/30.svg" alt="service">
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <h4 class="title">Banking Services</h4>
+                                                                        <p>Transforming ideas into digital solutions.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/career">
+                                            Career
+                                        </a>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="/home/contact">
+                                            Contact
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="button-area-right-header">
+                            <a href="contact.html" class="rts-btn btn-border">
+                                Get in touch
+                                <img class="injectable" src="~/Content/assets/images/service/icons/13.svg" alt="arrow">
+                            </a>
+                            <div class="menu-btn-toggle">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card overflow-hidden">
+                <div class="card-body pt-0">
+                    <div class="row">
+                        <div class="col-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer area start -->
+    <div class="rts-footer-area rts-section-gapTop pb--80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <div class="logo-area">
+                        <a href="index-2.html" class="logo">
+                            <img src="~/Content/assets/Z-1.png" alt="logo">
+                        </a>
+                        <p class="disc">
+                            Zarch Tech is a leading IT solutions company that provides innovative technology services to
+                            businesses of all sizes.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="single-nav-area-footer">
+                                <p class="parent">Services</p>
+                                <ul>
+                                    <li><a href="technologies-service.html">Technologies</a></li>
+                                    <li><a href="ai-learning-service.html">Ai Learning</a></li>
+                                    <li><a href="it-strategies.html">IT Strategies</a></li>
+                                    <li><a href="it-consulting-service.html">It Consulting</a></li>
+                                    <li><a href="management-service.html">Management</a></li>
+                                    <li><a href="service-single.html">Cloud Migration</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="single-nav-area-footer">
+                                <p class="parent">Company</p>
+                                <ul>
+                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="career.html">Careers</a></li>
+                                    <li><a href="team.html">Our Team</a></li>
+                                    <li><a href="blog-grid.html">News</a></li>
+                                    <li><a href="partner.html">Partner</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="single-nav-area-footer">
+                                <p class="parent">Industrys</p>
+                                <ul>
+                                    <li><a href="construction-industry.html">Construction</a></li>
+                                    <li><a href="healthcare-industry.html">Healthcare</a></li>
+                                    <li><a href="ecommerce-industry.html">Ecommerce</a></li>
+                                    <li><a href="fintech-industry.html">Fintech</a></li>
+                                    <li><a href="logistic-industry.html">Logistic</a></li>
+                                    <li><a href="travel-industry.html">Travel Industry</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="single-nav-area-footer">
+                                <p class="parent">Legal</p>
+                                <ul>
+                                    <li><a href="terms-of-use.html">Terms</a></li>
+                                    <li><a href="privacy-policy.html">Privacy</a></li>
+                                    <li><a href="cookies-policy.html">Cookies</a></li>
+                                    <li><a href="faq.html">Faq's</a></li>
+                                    <li><a href="free-consultation.html">Consultation</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer area end -->
+    <!-- rts copyright area start -->
+    <div class="rts-copyright-area-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-wrapper">
+                        <p>© 2024 Luminos. All rights reserved.</p>
+                        <div class="social-copyright-area">
+                            <ul>
+                                <li aria-label="Visit our Facebook page">
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li aria-label="Visit our Twitter page">
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                </li>
+                                <li aria-label="Visit our Youtube page">
+                                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                </li>
+                                <li aria-label="Visit our Linkedin page">
+                                    <a href="#">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts copyright area end -->
+    <!-- pre loader area start -->
+    <div class="loader-wrapper">
+        <div class="loader">
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div id="side-bar" class="side-bar header-two" dir="ltr">
+        <button class="close-icon-menu" aria-label="footer_Button"><i class="far fa-times"></i></button>
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li><a href="#" class="main">Home</a></li>
+                    <li><a href="#" class="main">About</a></li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Services</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#">Accounting Services</a></li>
+                            <li><a href="#">IT Outsourcing</a></li>
+                            <li><a href="#">Inventory Management</a></li>
+                            <li><a href="#">CCTV Camera Monitoring</a></li>
+                            <li><a href="#">Payroll Management</a></li>
+                            <li><a href="#">Reporting Services</a></li>
+                            <li><a href="#">Travel Arrangements</a></li>
+                            <li><a href="#">Background Checking And Onboarding</a></li>
+                            <li><a href="#">Maintenance Management</a></li>
+                            <li><a href="#">Commissions And Incentives Management</a></li>
+                            <li><a href="#">Suppliers management</a></li>
+                            <li><a href="#">Banking Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="main">Career</a></li>
+                    <li><a href="#" class="main">Contact</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="rts-social-border-area right-sidebar mt--80">
+                <ul>
+                    <li>
+                        <a href="#" aria-label="social link" data-description="social">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="social link" data-description="social">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="social link" data-description="social">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="social link" data-description="social">
+                            <i class="fa-brands fa-pinterest"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="social link" data-description="social">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+
+    <div id="anywhere-home"></div>
+
+    <!-- progress area start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                  style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- progress area end -->
+
+    @*@RenderSection("Scripts", required: false)*@
+
+    <script defer src="~/Content/assets/js/plugins/jquery.js"></script>
+    <script defer src="~/Content/assets/js/vendor/waw.js"></script>
+    <script defer src="~/Content/assets/js/vendor/jarallax.js"></script>
+    <script defer src="~/Content/assets/js/plugins/smooth-scroll.js"></script>
+
+    <script defer src="~/Content/assets/js/plugins/counter-up.js"></script>
+    <script defer src="~/Content/assets/js/vendor/waypoint.js"></script>
+    <script defer src="~/Content/assets/js/plugins/popup.js"></script>
+
+    <script defer src="~/Content/assets/js/plugins/swiper.js"></script>
+    <script defer src="~/Content/assets/js/plugins/svg-inject.js"></script>
+    <script defer src="~/Content/assets/js/plugins/metismenu.js"></script>
+    <script defer src="~/Content/assets/js/vendor/contact-form.js"></script>
+    <script defer src="~/Content/assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="~/Content/assets/js/main.js"></script>
+    <script defer src="~/Content/assets/js/toastr.script.min.js"></script>
+</body>
+</html>

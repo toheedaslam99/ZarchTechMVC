@@ -1,0 +1,179 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\models\\emailclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:models\\emailclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\controllers\\userconfigurationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:controllers\\userconfigurationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\controllers\\headerbitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:controllers\\headerbitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\controllers\\designcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:controllers\\designcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\models\\model1.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:models\\model1.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\models\\metaclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:models\\metaclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|d:\\einfomovie-main\\e-infoglobalnewlive\\models\\model1.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{5842CD5E-F6F0-47FC-8CFC-AC6BCDC363E7}|E-infoGlobalNewLive.csproj|solutionrelative:models\\model1.edmx.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailClass.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\EmailClass.cs",
+              "RelativeDocumentMoniker": "Models\\EmailClass.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\EmailClass.cs",
+              "RelativeToolTip": "Models\\EmailClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:22:39.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserConfigurationController.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\UserConfigurationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserConfigurationController.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\UserConfigurationController.cs",
+              "RelativeToolTip": "Controllers\\UserConfigurationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:22:33.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAEwBAAAAAAAAAAAkwHIBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:17:49.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HeaderBitsController.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\HeaderBitsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HeaderBitsController.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\HeaderBitsController.cs",
+              "RelativeToolTip": "Controllers\\HeaderBitsController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:20:18.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DesignController.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\DesignController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DesignController.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Controllers\\DesignController.cs",
+              "RelativeToolTip": "Controllers\\DesignController.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:17:49.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAF8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-08-25T19:16:20.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Model1.edmx.sql ",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\Model1.edmx.sql",
+              "RelativeDocumentMoniker": "Models\\Model1.edmx.sql",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\Model1.edmx.sql",
+              "RelativeToolTip": "Models\\Model1.edmx.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-25T19:12:39.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "Models\\Model1.edmx",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-08-25T19:11:12.849Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MetaClass.cs",
+              "DocumentMoniker": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\MetaClass.cs",
+              "RelativeDocumentMoniker": "Models\\MetaClass.cs",
+              "ToolTip": "D:\\EinfoMovie-main\\E-infoGlobalNewLive\\Models\\MetaClass.cs",
+              "RelativeToolTip": "Models\\MetaClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T19:11:03.824Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

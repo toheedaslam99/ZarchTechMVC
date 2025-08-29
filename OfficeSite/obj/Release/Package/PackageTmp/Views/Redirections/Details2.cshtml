@@ -1,0 +1,78 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.RedirectionLog>
+
+@{
+    ViewBag.Title = "Redirection Logs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Count() > 0)
+{
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bolder">Tuner</label>
+            </th>
+            <th>
+                <label class="fw-bolder">Country</label>
+            </th>
+            <th>
+                <label class="fw-bolder">Code</label>
+            </th>
+            <th>
+                <label class="fw-bolder">Access</label>
+            </th>
+            <th>
+                <label class="fw-bolder">Hits</label>
+            </th>
+
+            <th>
+                <label class="fw-bolder">URL</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tuner.TunerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccessDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hits)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Redirection.TargetURL)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+}
+else
+{
+    <div style="min-height: 110px;">
+        <div class="toast fade show text-white bg-primary border-0" role="alert" aria-live="assertive"
+             data-bs-autohide="false" aria-atomic="true">
+            <div class="toast-header">
+                <img src="assets/images/logo.svg" alt="" class="me-2" height="18">
+                <strong class="me-auto">E-info Movies</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                This Movie Was Record Not Found
+            </div>
+        </div>
+    </div>
+}

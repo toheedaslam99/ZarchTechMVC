@@ -1,0 +1,712 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.BlogMenu>
+
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<section id="home-banner-slider" class="iq-main-slider p-0 iq-rtl-direction swiper banner-home-swiper overflow-hidden" data-swiper="home-banner-slider">
+    <div class="slider m-0 p-0 swiper-wrapper home-slider">
+        @if (ViewBag.Back != null)
+        {
+            foreach (var item in ViewBag.Back)
+            {
+                    <a class="swiper-slide  slide swiper-bg s-bg-1" style="background-image: @item.Image;" href="~/design/Play?ID=@item.ID&CID=@item.CustomerID">
+                        <h3 style="margin-right: 50%;" class="slider-text big-title title text-uppercase" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4">@item.Name</h3>
+                    </a>
+            }
+        }
+        else
+        {
+            <div class="swiper-slide  slide swiper-bg s-bg-1" style="background-image: url('../../NewTheme/images/trending/13.jpg');">
+                <div class="container-fluid position-relative h-100">
+                    <div class="slider-inner h-100">
+                        <div class="row align-items-center  iq-ltr-direction h-100 ">
+                            <div class="col-lg-7 col-md-12">
+                                <h3 class="slider-text big-title title text-uppercase" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4">Promote Your Content Here!</h3>
+                                <div class="d-flex flex-wrap align-items-center r-mb-23" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4">
+                                    <p data-iq-gsap="onStart" data-iq-position-x="0" data-iq-position-y="150" data-iq-duration="1" data-iq-delay=".5">
+                                        With our website's sleek design, intuitive navigation, and responsive layout, your advertisement will seamlessly integrate with the overall user experience, maximizing its impact and visibility. Our audience trusts and values the recommendations and offerings on our platform, making it an ideal environment to promote your movie and build brand recognition.
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center r-mb-23" data-iq-gsap="onStart" data-iq-position-x="0" data-iq-position-y="150" data-iq-duration="1" data-iq-delay=".6">
+                                    <a href="@Url.Action("Contact","Admin")" target="_blank" class="btn btn-hover iq-button">
+                                        <i class="fa fa-play mr-2"
+                                           aria-hidden="true"></i>Advertise With Us
+                                    </a>
+                                </div>
+                            </div>
+                            <div class=" col-lg-5 col-md-12 trailor-video iq-slider d-none d-lg-block">
+                                <a href="~/NewTheme/html/watch-/show reel.mp4" target="_blank" class="video-open playbtn" tabindex="0">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px"
+                                         viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+                                    <polygon class="triangle" fill="none" stroke-width="7" stroke-linecap="round"
+                                             stroke-linejoin="round" stroke-miterlimit="10"
+                                             points="73.5,62.5 148.5,105.8 73.5,149.1 "></polygon>
+                                    <circle class="circle" fill="none" stroke-width="7" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3">
+                                                                    </circle>
+                                                                </svg>
+                                    <span class="w-trailor">Watch Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- Slider End -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/prime video.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "Amazon Prime Video", find = 49 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/hbo.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "HBO Max", find = 48 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/Netflix.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "Netflix Movies", find = 52 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/hulu-icon-300x300.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "Hulu Movies", find = 51 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/Disney.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "Disney Movies", find = 58 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 text-center">
+            <div class="thumb">
+                <a href=""><img src="~/Content/logo/apple-tv.png" alt=""></a>
+                <br />
+                <a href="@Url.Action("CategoryMovies","Design",new {CateId = "Apple Tv Movies", find = 50 })" class="btn btn-hover iq-button">
+                    <i class="fa fa-play"
+                       aria-hidden="true"></i>Watch Now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+            @foreach (var item in ViewBag.LeaderBoard)
+            {
+                if (item.AdsType != "Manually")
+                {
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                        crossorigin="anonymous"></script>
+                                <!-- mobile preview -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-8209193384023908"
+                                     data-ad-slot="4631248958"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                                    <div class="block-images position-relative ">
+                                        <div class="img-box">
+                                            <a href="~/design/logs?ID=@item.ID&CID=@item.CustomerID">
+                                                <img src="~/AdvertiseImage/@item.Image" class="img-fluid" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- Main container -->
+<main id="main" class="site-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-12">
+                <article>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                            data-animation-in="fadeInLeft" data-delay-in="0.6"
+                            style="opacity: 1; animation-delay: 0.6s">
+                            Early Life Film Career Struggle & Best Movies
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="iq-blog-box">
+                        <div class="row">
+                            @foreach (var blog in ViewBag.EarlyBlog)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <a href="Blog?BlogName=@blog.BlogTitle">
+                                        <div class="iq-blog-image">
+                                            <img width="1920" height="1080" src="~/Image/@blog.BlogPoster" alt="">
+                                        </div>
+                                        <div class="iq-blog-detail">
+                                            <div class="blog-title">
+                                                <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                                                   data-animation-in="fadeInLeft" data-delay-in="0.6"
+                                                   style="opacity: 1; animation-delay: 0.6s">
+                                                    @blog.BlogTitle
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="blog-button text-center">
+                            <a class="button-link" href="CategoryBlog?CateID=Early Life Film Career Struggle & Best Movies">View All Record<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                @foreach (var item in ViewBag.Category)
+                                {
+                                    if (item.PageSubType == "Early Life Film Career Struggle & Best Movies")
+                                    {
+                                        if (item.AdsType != "Manually")
+                                        {
+                                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                    crossorigin="anonymous"></script>
+                                            <!-- 750x200pxBlogLandingCategory -->
+                                            <ins class="adsbygoogle"
+                                                 style="display:inline-block;width:750px;height:200px"
+                                                 data-ad-client="ca-pub-8209193384023908"
+                                                 data-ad-slot="6659131598"></ins>
+                                            <script>
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
+                                        }
+                                        else
+                                        {
+                                                <div class="block-images position-relative ">
+                                                    <div class="img-box">
+                                                        <a href="~/design/logs?ID=@item.ID&CID=@item.CustomerID">
+                                                            <img src="~/AdvertiseImage/@item.Image" class="img-fluid" alt="" loading="lazy">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                            data-animation-in="fadeInLeft" data-delay-in="0.6"
+                            style="opacity: 1; animation-delay: 0.6s">
+                            Top 50 Movies
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="iq-blog-box">
+                        <div class="row">
+                            @foreach (var blog in ViewBag.TopBlog)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <a href="Blog?BlogName=@blog.BlogTitle">
+                                        <div class="iq-blog-image">
+                                            <img width="1920" height="1080" src="~/Image/@blog.BlogPoster" alt="">
+                                        </div>
+                                        <div class="iq-blog-detail">
+                                            <div class="blog-title">
+                                                <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                                                   data-animation-in="fadeInLeft" data-delay-in="0.6"
+                                                   style="opacity: 1; animation-delay: 0.6s">
+                                                    @blog.BlogTitle
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="blog-button text-center">
+                            <a class="button-link" href="CategoryBlog?CateID=Top 50 Movies">View All Record<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                @foreach (var item in ViewBag.Category)
+                                {
+                                    if (item.PageSubType == "Top 50 Movies")
+                                    {
+                                        if (item.AdsType != "Manually")
+                                        {
+                                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                    crossorigin="anonymous"></script>
+                                            <!-- 750x200pxBlogLandingCategory -->
+                                            <ins class="adsbygoogle"
+                                                 style="display:inline-block;width:750px;height:200px"
+                                                 data-ad-client="ca-pub-8209193384023908"
+                                                 data-ad-slot="6659131598"></ins>
+                                            <script>
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
+                                        }
+                                        else
+                                        {
+                                                <div class="block-images position-relative ">
+                                                    <div class="img-box">
+                                                        <a href="~/design/logs?ID=@item.ID&CID=@item.CustomerID">
+                                                            <img src="~/AdvertiseImage/@item.Image" class="img-fluid" alt="" loading="lazy">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                            data-animation-in="fadeInLeft" data-delay-in="0.6"
+                            style="opacity: 1; animation-delay: 0.6s">
+                            Movie Reviews
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="iq-blog-box">
+                        <div class="row">
+                            @foreach (var blog in ViewBag.ReivewBlog)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <a href="Blog?BlogName=@blog.BlogTitle">
+                                        <div class="iq-blog-image">
+                                            <img width="1920" height="1080" src="~/Image/@blog.BlogPoster" alt="">
+                                        </div>
+                                        <div class="iq-blog-detail">
+                                            <div class="blog-title">
+                                                <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                                                   data-animation-in="fadeInLeft" data-delay-in="0.6"
+                                                   style="opacity: 1; animation-delay: 0.6s">
+                                                    @blog.BlogTitle
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="blog-button text-center">
+                            <a class="button-link" href="CategoryBlog?CateID=Movie Reviews">View All Record<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <div class="widget-area">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h5 class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                            data-animation-in="fadeInLeft" data-delay-in="0.6"
+                            style="opacity: 1; animation-delay: 0.6s">
+                            Recent Videos Uploads
+                        </h5>
+                    </div>
+                    <div class="iq-widget-menu widget">
+                        <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                           data-animation-in="fadeInLeft" data-delay-in="0.6"
+                           style="opacity: 1; animation-delay: 0.6s">
+                            Best Entrepreneur
+                        </p>
+                        <div class="list-inline iq-widget-menu">
+                            <ul class="row list-inline  mb-0 iq-rtl-direction">
+                                @foreach (var item in ViewBag.Adventure)
+                                {
+                                    <li class="slide-item col-lg-12 col-md-12 col-sm-12 col-12 mb-6">
+                                        <div class="block-images position-relative ">
+                                            <div class="img-box">
+                                                <img src="~/image/@item.Movie1.MovieImage" class="img-fluid" alt="" loading="lazy">
+                                            </div>
+                                            <div class="block-description">
+                                                <div class="hover-buttons">
+                                                    <a href="@Url.Action("movie","design",new {specificmovies = item.Movie1.Title, find = item.CategoryID })" role="button" class="btn btn-hover">
+                                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                                        play now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                                @foreach (var Landing in ViewBag.SideBar)
+                                {
+                                    if (Landing.SeqOrder == "1")
+                                    {
+                                        if (Landing.AdsType != "Manually")
+                                        {
+                                            <li class="rc-post-item">
+                                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                        crossorigin="anonymous"></script>
+                                                <!-- responsive square -->
+                                                <ins class="adsbygoogle"
+                                                     style="display:block"
+                                                     data-ad-client="ca-pub-8209193384023908"
+                                                     data-ad-slot="2285067466"
+                                                     data-ad-format="auto"
+                                                     data-full-width-responsive="true"></ins>
+                                                <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                </script>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                                <li class="rc-post-item">
+                                                    <div class="thumb">
+                                                        <a href="~/design/logs?ID=@Landing.ID&CID=@Landing.CustomerID">
+                                                            <img src="~/AdvertiseImage/@Landing.Image" alt="">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="iq-widget-menu widget">
+                        <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                           data-animation-in="fadeInLeft" data-delay-in="0.6"
+                           style="opacity: 1; animation-delay: 0.6s">
+                            Tiral Movies
+                        </p>
+                        <div class="list-inline iq-widget-menu">
+                            <ul class="row list-inline  mb-0 iq-rtl-direction">
+                                @foreach (var item in ViewBag.Tiral)
+                                {
+                                    <li class="slide-item col-lg-12 col-md-12 col-sm-6 col-6 mb-4">
+                                        <div class="block-images position-relative ">
+                                            <div class="img-box">
+                                                <img src="~/image/@item.Movie1.MovieImage" class="img-fluid" alt="" loading="lazy">
+                                            </div>
+                                            <div class="block-description">
+                                                <div class="hover-buttons">
+                                                    <a href="@Url.Action("movie","design",new {specificmovies = item.Movie1.Title, find = item.CategoryID })" role="button" class="btn btn-hover">
+                                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                                        play now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                                @foreach (var Landing in ViewBag.SideBar)
+                                {
+                                    if (Landing.SeqOrder == "2")
+                                    {
+                                        if (Landing.AdsType != "Manually")
+                                        {
+                                            <li class="rc-post-item">
+                                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                        crossorigin="anonymous"></script>
+                                                <!-- responsive square -->
+                                                <ins class="adsbygoogle"
+                                                     style="display:block"
+                                                     data-ad-client="ca-pub-8209193384023908"
+                                                     data-ad-slot="2285067466"
+                                                     data-ad-format="auto"
+                                                     data-full-width-responsive="true"></ins>
+                                                <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                </script>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                                <li class="rc-post-item">
+                                                    <div class="thumb">
+                                                        <a href="~/design/logs?ID=@Landing.ID&CID=@Landing.CustomerID">
+                                                            <img src="~/AdvertiseImage/@Landing.Image" alt="">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="iq-widget-menu widget">
+                        <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                           data-animation-in="fadeInLeft" data-delay-in="0.6"
+                           style="opacity: 1; animation-delay: 0.6s">
+                            Crime Drama
+                        </p>
+                        <div class="list-inline iq-widget-menu">
+                            <ul class="row list-inline  mb-0 iq-rtl-direction">
+                                @foreach (var item in ViewBag.Crime)
+                                {
+                                    <li class="slide-item col-lg-12 col-md-12 col-sm-6 col-6 mb-4">
+                                        <div class="block-images position-relative ">
+                                            <div class="img-box">
+                                                <img src="~/image/@item.Movie1.MovieImage" class="img-fluid" alt="" loading="lazy">
+                                            </div>
+                                            <div class="block-description">
+                                                <div class="hover-buttons">
+                                                    <a href="@Url.Action("movie","design",new {specificmovies = item.Movie1.Title, find = item.CategoryID })" role="button" class="btn btn-hover">
+                                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                                        play now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                                @foreach (var Landing in ViewBag.SideBar)
+                                {
+                                    if (Landing.SeqOrder == "3")
+                                    {
+                                        if (Landing.AdsType != "Manually")
+                                        {
+                                            <li class="rc-post-item">
+                                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                        crossorigin="anonymous"></script>
+                                                <!-- responsive square -->
+                                                <ins class="adsbygoogle"
+                                                     style="display:block"
+                                                     data-ad-client="ca-pub-8209193384023908"
+                                                     data-ad-slot="2285067466"
+                                                     data-ad-format="auto"
+                                                     data-full-width-responsive="true"></ins>
+                                                <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                </script>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                                <li class="rc-post-item">
+                                                    <div class="thumb">
+                                                        <a href="~/design/logs?ID=@Landing.ID&CID=@Landing.CustomerID">
+                                                            <img src="~/AdvertiseImage/@Landing.Image" alt="">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="iq-widget-menu widget">
+                        <p class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                           data-animation-in="fadeInLeft" data-delay-in="0.6"
+                           style="opacity: 1; animation-delay: 0.6s">
+                            Oscar Winning
+                        </p>
+                        <div class="list-inline iq-widget-menu">
+                            <ul class="row list-inline  mb-0 iq-rtl-direction">
+                                @foreach (var item in ViewBag.Oscar)
+                                {
+                                    <li class="slide-item col-lg-12 col-md-12 col-sm-6 col-6 mb-4">
+                                        <div class="block-images position-relative ">
+                                            <div class="img-box">
+                                                <img src="~/image/@item.Movie1.MovieImage" class="img-fluid" alt="" loading="lazy">
+                                            </div>
+                                            <div class="block-description">
+                                                <div class="hover-buttons">
+                                                    <a href="@Url.Action("movie","design",new {specificmovies = item.Movie1.Title, find = item.CategoryID })" role="button" class="btn btn-hover">
+                                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                                        play now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                                @foreach (var Landing in ViewBag.SideBar)
+                                {
+                                    if (Landing.SeqOrder == "4")
+                                    {
+                                        if (Landing.AdsType != "Manually")
+                                        {
+                                            <li class="rc-post-item">
+                                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                                        crossorigin="anonymous"></script>
+                                                <!-- responsive square -->
+                                                <ins class="adsbygoogle"
+                                                     style="display:block"
+                                                     data-ad-client="ca-pub-8209193384023908"
+                                                     data-ad-slot="2285067466"
+                                                     data-ad-format="auto"
+                                                     data-full-width-responsive="true"></ins>
+                                                <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                </script>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            
+                                                <li class="rc-post-item">
+                                                    <div class="thumb">
+                                                        <a href="~/design/logs?ID=@Landing.ID&CID=@Landing.CustomerID">
+                                                            <img src="~/AdvertiseImage/@Landing.Image" alt="">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="main-content">
+    <section id="iq-upcoming-movie">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-sm-12  text-center">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="trending-text big-title text-uppercase mt-0 fadeInLeft animated"
+                            data-animation-in="fadeInLeft" data-delay-in="0.6"
+                            style="opacity: 1; animation-delay: 0.6s">
+                            Recent Uploads
+                        </h3>
+                    </div>
+                    <div class="favourite-slider">
+                        <div class="swiper pt-2 pt-md-3 pt-lg-4 iq-rtl-direction" data-swiper="common-slider">
+                            <ul class="swiper-wrapper p-0 m-0">
+                                @foreach (var movie in ViewBag.List)
+                                {
+                                    <li class="swiper-slide slide-item">
+                                        <div class="block-images position-relative ">
+                                            <div class="img-box">
+                                                <img src="~/Image/@movie.Movie1.MovieImage" class="img-fluid" alt="" loading="lazy">
+                                            </div>
+                                            <div class="block-description">
+                                                <h6 class="iq-title"><a href="@Url.Action("movie","Design",new {specificmovies = movie.Movie1.Title, find = movie.CategoryID })">@movie.Movie1.Title</a></h6>
+                                                <div class="hover-buttons">
+                                                    <a href="@Url.Action("movie","Design",new {specificmovies = movie.Movie1.Title, find = movie.CategoryID })" role="button" class="btn btn-hover">
+                                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                                        Play Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div class="blog-button text-center">
+                            <a class="button-link" href="@Url.Action("CategoryMovies","Design",new {CateId = "Recent Uploads", find = 33 })">View All Record<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+            @foreach (var item in ViewBag.Footer)
+            {
+                if (item.AdsType != "Manually")
+                {
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209193384023908"
+                                        crossorigin="anonymous"></script>
+                                <!-- mobile preview -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-8209193384023908"
+                                     data-ad-slot="4631248958"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                                    <div class="block-images position-relative ">
+                                        <div class="img-box">
+                                            <a href="~/design/logs?ID=@item.ID&CID=@item.CustomerID">
+                                                <img src="~/AdvertiseImage/@item.Image" class="img-fluid" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                }
+            }
+        </div>
+    </div>
+</div>

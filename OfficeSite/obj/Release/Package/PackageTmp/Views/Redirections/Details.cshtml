@@ -1,0 +1,67 @@
+﻿@model E_infoGlobalNew.Models.Redirection
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Redirection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QueryParameters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueryParameters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupDrop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupDrop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.MovieImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.MovieImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tuner.TunerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tuner.TunerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

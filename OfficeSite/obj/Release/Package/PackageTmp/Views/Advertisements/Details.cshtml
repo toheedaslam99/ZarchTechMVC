@@ -1,0 +1,155 @@
+﻿@model E_infoGlobalNew.Models.Advertisement
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Advertisement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageSubType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageSubType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdsType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeqOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeqOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorRent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorRent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BudgetAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BudgetAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TragetUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TragetUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClickAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClickAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerUser.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerUser.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

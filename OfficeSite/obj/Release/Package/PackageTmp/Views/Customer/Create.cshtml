@@ -1,0 +1,72 @@
+﻿@model E_infoGlobalNew.Models.CustomerUser
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Colmn {
+        margin-top: 10px;
+    }
+
+    .upclonm {
+        margin-top: -25px;
+        text-decoration: none;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <label class="fw-bold">Name</label>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">User Name</label>
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">Password</label>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">Email</label>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">Number</label>
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">Status</label>
+                <select name="Status" class="form-control">
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label class="fw-bold">Type</label>
+                <select name="Type" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="Amazon Prime Video">Amazon Prime Video</option>
+                    <option value="Apple Tv Movies">Apple Tv Movies</option>
+                    <option value="Hulu Movies">Hulu Movies</option>
+                    <option value="HBO Max">HBO Max</option>
+                    <option value="Netflix Movies">Netflix Movies</option>
+                    <option value="Disney Movies">Disney Movies</option>
+                </select>
+            </div>
+            <div class="form-group Colmn">
+                <div class="float-end">
+                    <input type="submit" value="Save" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="upclonm btn btn-dark">
+    @Html.ActionLink("Back", "Index")
+</div>
+

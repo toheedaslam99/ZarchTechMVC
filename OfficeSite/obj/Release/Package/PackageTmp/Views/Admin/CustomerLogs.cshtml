@@ -1,0 +1,92 @@
+﻿@model IEnumerable<E_infoGlobalNew.Models.CustomerLog>
+
+@{
+    ViewBag.Title = "CustomerLogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table id="tblUser" class="table table-bordered dt-responsive  nowrap w-100 table_wrapper">
+    <thead>
+        <tr>
+            <th>
+                <label class="fw-bold">Name</label>
+            </th>
+            <th>
+                <label class="fw-bold">Browser</label>
+            </th>
+            <th>
+                <label class="fw-bold">System</label>
+            </th>
+            <th>
+                <label class="fw-bold">IP Address</label>
+            </th>
+            <th>
+                <label class="fw-bold">Date</label>
+            </th>
+            <th>
+                <label class="fw-bold">Time</label>
+            </th>
+            <th>
+                <label class="fw-bold">Code</label>
+            </th>
+            <th>
+                <label class="fw-bold">Month</label>
+            </th>
+            <th>
+                <label class="fw-bold">Year</label>
+            </th>
+            <th>
+                <label class="fw-bold">Logs</label>
+            </th>
+            <th>
+                <label class="fw-bold">User ID</label>
+            </th>
+            <th>
+                <label class="fw-bold">Password</label>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Browser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OsWindow)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPAdress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Month)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Logs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

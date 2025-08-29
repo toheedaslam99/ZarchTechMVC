@@ -1,0 +1,106 @@
+﻿@model E_infoGlobalNew.Models.HeaderBit
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Colmn {
+        margin-top: 10px;
+    }
+
+    .upclonm {
+        margin-top: -25px;
+        text-decoration: none;
+    }
+
+    #UpdateBy {
+        display: none;
+    }
+
+    .Description {
+        height: 200px;
+    }
+</style>
+@using (Html.BeginForm("Edit", "HeaderBits", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-6">
+                <label>Title</label>
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Cinima Name</label>
+                @Html.EditorFor(model => model.CinmaName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CinmaName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12">
+                <label>Cinima Address</label>
+                @Html.EditorFor(model => model.CinmaAdress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CinmaAdress, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Customer Name</label>
+                @Html.DropDownList("CustomerID", null, htmlAttributes: new { @class = "form-control select2" })
+                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Floor Rent Amount</label>
+                @Html.EditorFor(model => model.FloorAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FloorAmount, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Budget Amount</label>
+                @Html.EditorFor(model => model.BudguetAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BudguetAmount, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                <label>Image</label>
+                <input type="file" class="form-control" name="Upload" id="Upload" accept=".jpg, .png," />
+            </div>
+            <div class="col-6">
+                <label>Redirection Type</label>
+                <select id="RedirectType" name="RedirectType" class="form-control select2">
+                    <option value="0">--Select--</option>
+                    <option value="OnSite">On-Site</option>
+                    <option value="OficalSite">Offical-Site</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label>Status</label>
+                <select id="Status" name="Status" class="form-control select2">
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+            </div>
+            <div class="col-12" id="Embded">
+                <label>Embded Link <span class="font-size-10">(For On Site)</span></label>
+                @Html.EditorFor(model => model.EmbdedLink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmbdedLink, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12" id="Target">
+                <label>Target Page <span class="font-size-10">(For Offical Site)</span></label>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12">
+                <label>Booking Ticket Url</label>
+                @Html.EditorFor(model => model.BookingUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BookingUrl, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group Colmn">
+                <div class="float-end">
+                    <input type="submit" value="Update" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="upclonm btn btn-dark">
+    @Html.ActionLink("Back", "Index")
+</div>

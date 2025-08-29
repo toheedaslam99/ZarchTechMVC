@@ -1,0 +1,114 @@
+﻿@model E_infoGlobalNew.Models.Job
+
+@{
+    ViewBag.Title = "Job";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- career single banner area start -->
+<div class="career-single-banner-area rts-section-gap bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="career-page-single-banner">
+                    <span class="pre">Technologies</span>
+                    <h1 class="title">@Model.JobType</h1>
+                    @*<h3 class="title">$1000 - $1200 <span>USD/ Monthly</span></h3>*@
+                    <div class="single-career-wrapper">
+                        <div class="single">
+                            <h5 class="title">Position</h5>
+                            <span>@Model.Position</span>
+                        </div>
+                        <div class="single">
+                            <h5 class="title">Location</h5>
+                            <span>Karachi</span>
+                        </div>
+                        <div class="single">
+                            <h5 class="title">Employment Type</h5>
+                            <span>@Model.EmploymentType</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- career single banner area end -->
+<!-- career single bottom main start -->
+<div class="career-single-bottom-main-start">
+    <div class="container">
+        <div class="row h-100">
+            <div class="col-lg-6  rts-section-gap">
+                <div class="left-career-single">
+                    <h2 class="title">About</h2>
+                    @Html.Raw(Model.Description)
+                </div>
+            </div>
+            <div class="col-lg-6 pl--100 pl_md--15 pl_sm--10">
+                <div class="apply-right-area-sticky">
+                    <div class="sticky-inner">
+                        <div class="apply-now-card">
+                            <span class="pre">Ready to apply? We can't wait to meet you!</span>
+                            <a href="@Url.Action("Apply","Home",new {Id = Model.Id})" class="rts-btn btn-primary">Apply Now</a>
+                            <p>
+                                * By applying for this job listing, you agree to our <br> <a href="privacy-policy.html">
+                                    Data  Privacy
+                                    Policy
+                                    ↗ 
+                                </a>
+                                for recruitment
+                                and job applications.
+                            </p>
+                        </div>
+                        <div class="apply-bottom-wrapper">
+                            <h3 class="title">Benefit</h3>
+                            <div class="benefits-wrapper-card">
+                                <div class="single">
+                                    <i class="fa fa-credit-card-alt"></i>
+                                    <p>Competitive Salary</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-medkit"></i>
+                                    <p>Comprehensive Health Coverage</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-file-code-o"></i>
+                                    <p>Professional Development</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-briefcase"></i>
+                                    <p>Flexible Work Arrangements</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-columns"></i>
+                                    <p>Retirement Savings Plan</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-clock-o"></i>
+                                    <p>Paid Time Off (PTO) & Holidays</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-globe"></i>
+                                    <p>Collaborative & Inclusive Culture</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-envelope"></i>
+                                    <p>Career Growth Opportunities</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-tasks"></i>
+                                    <p>Wellness Programs</p>
+                                </div>
+                                <div class="single">
+                                    <i class="fa fa-share-square"></i>
+                                    <p>Company Social Events</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- career single bottom main end -->
