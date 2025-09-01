@@ -587,6 +587,7 @@
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\css\toastr.css" />
     <Content Include="Content\assets\css\vendor\bootstrap.min.css" />
+    <Content Include="Content\assets\favicon.png" />
     <Content Include="Content\assets\fonts\6500595b785e358dcc2a2f3a_AeonikMedium-2.html" />
     <Content Include="Content\assets\fonts\6500595b785e358dcc2a2f3a_AeonikMedium-3.html" />
     <Content Include="Content\assets\fonts\6500595b785e358dcc2a2f3a_AeonikMedium-4.html" />
